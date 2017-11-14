@@ -1,0 +1,12 @@
+﻿@model IEnumerable<MyProject.Models.Medical_history>
+@{
+    ViewBag.Title = "Index";
+}
+
+<html>
+<body style="background-color:pink">
+    
+    <img src="~/picture/createPMH.png" width="40%" height="40%" style="margin-top:30px" onclick="location.href='@Url.Action("PMH_Create", "PMH")';">
+    @*@Html.ActionLink(" เพิ่มประวัติการรักษา", "PMH_Create", "PMH")*@
+</body>
+</html>

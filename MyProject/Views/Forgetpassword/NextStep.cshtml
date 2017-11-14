@@ -1,0 +1,26 @@
+﻿@{
+    ViewBag.Title = "SignIn";
+}
+<link href="~/Content/Emailpage.css" rel="stylesheet" type="text/css" />
+@using (Html.BeginForm())
+{
+    <html>
+    <body style="background-color:pink">
+
+        @Html.AntiForgeryToken()
+
+        <div>
+            <div class="broader">
+                <div class="container">
+                    <br />
+                    <center><p class="Login-p" style="font-size:35px ;margin:25px 0px 10px">กรุณาตรวจสอบอีเมลล์ของท่าน</p></center>
+                   <br />
+                    <center>
+                        @Html.ActionLink("กลับสู่หน้าหลัก", "Index", "Index")
+                    </center>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
+}

@@ -1,0 +1,135 @@
+﻿@model MyProject.Models.Profile
+@using System.Globalization;
+@using System.Web.Mvc;
+@{
+    ViewBag.Title = "Index";
+}
+
+<html>
+@using (Html.BeginForm())
+{
+    <body style="background-color:pink">
+        <div style="text-align:center">
+            <div class="container">
+                <br />
+                <div class="row">
+
+                    <div class="col-md-12 personal-info">
+
+
+                        <div class="form-group">
+                            <div class="col-md-4" style="text-align:left">
+                                <label style="color:darkblue;font-size:24px;font-family:'Browallia New'">อีเมลล์ : </label>
+                            </div>
+                            <div class="col-md-8" style="text-align:left">
+                                <input name="Email_update" class="form-control" type="text" value="@Model.Email" readonly>
+                                <br />
+                            </div>
+                        </div>
+
+
+
+                        <div class="form-group">
+                            <div class="col-md-4" style="text-align:left">
+                                <label style="color:darkblue;font-size:24px;font-family:'Browallia New'">ชื่อจริง : </label>
+                            </div>
+
+                            <div class="col-md-8" style="text-align:left">
+                                <input name="Firstname_update" class="form-control" type="text" value="@Model.Firstname">
+                                <br />
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="col-md-4" style="text-align:left">
+                                <label style="color:darkblue;font-size:24px;font-family:'Browallia New'">นามสกุล : </label>
+                            </div>
+                            <div class="col-md-8" style="text-align:left">
+                                <input name="Lastname_update" class="form-control" type="text" value="@Model.Lastname">
+                                <br />
+                            </div>
+                        </div>
+                        @if (Model.Birthday != null)
+                        {
+                            DateTime dt = DateTime.ParseExact(Model.Birthday.ToString(), "MM/dd/yyyy hh:mm:ss tt", CultureInfo.InvariantCulture);
+                            string s = dt.ToString("MM/dd/yyyy", CultureInfo.InvariantCulture);
+                            <div class="form-group">
+                                <div class="col-md-4" style="text-align:left">
+                                    <label style="color:darkblue;font-size:24px;font-family:'Browallia New'">วัดเกิด : </label>
+                                </div>
+                                <div class="col-md-8" style="text-align:left">
+                                    <input name="Birthday_update" class="form-control" type="datetime" value="@s">
+                                    <label style="color:red">***ถ้าหากวันที่ถูกอยู่แล้วไม่ต้องแก้ไข***</label>
+                                    <br />
+                                </div>
+                            </div>
+                        }
+
+                        <div class="form-group">
+                            <div class="col-md-4" style="text-align:left">
+                                <label style="color:darkblue;font-size:24px;font-family:'Browallia New'">โรคประจำตัว : </label>
+                            </div>
+                            <div class="col-md-8" style="text-align:left">
+                                <input name="Congenital" class="form-control" type="text" value="@Model.Congenital_disease">
+                                <br />
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="col-md-4" style="text-align:left">
+                                <label style="color:darkblue;font-size:24px;font-family:'Browallia New'">เพศ : </label>
+                            </div>
+                            <div class="col-md-8" style="text-align:left">
+                                <input name="Sex_update" class="form-control" type="text" value="@Model.Sex" readonly>
+                                <br />
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="col-md-4" style="text-align:left">
+                                <label style="color:darkblue;font-size:24px;font-family:'Browallia New'">เบอร์ติดต่อ : </label>
+                            </div>
+                            <div class="col-md-8" style="text-align:left">
+                                <input name="Contact_update" class="form-control" type="text" value="@Model.Contact">
+                                <br />
+                            </div>
+                        </div>
+
+
+
+
+
+                        <div class="form-group">
+                            <div class="col-md-4">
+                            </div>
+                            <div class="col-md-8" style="text-align:left">
+
+                                <input class="btn btn-default" type="submit" value="บันทึก" />
+                                <input class="btn btn-default" type="button" value="ยกเลิก" onclick="location.href='@Url.Action("Show", "Profile")';" />
+
+                            </div>
+                        </div>
+
+                        @if (ViewBag.ok != null)
+                        {
+
+                            <script>
+                                alert("บันทึกเรียบร้อย");
+
+                                    location.href = '@Url.Action("Show", "Profile")';
+
+
+                            </script>
+
+                        }
+
+                    </div>
+                </div>
+                <hr>
+            </div>
+
+        </div>
+
+    </body>
+}
+</html>

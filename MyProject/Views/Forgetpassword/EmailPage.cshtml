@@ -1,0 +1,34 @@
+﻿@{
+    ViewBag.Title = "SignIn";
+}
+<link href="~/Content/Emailpage.css" rel="stylesheet" type="text/css" />
+@using (Html.BeginForm())
+{
+    <html>
+    <body style="background-color:pink">
+
+        @Html.AntiForgeryToken()
+
+        <div>
+            <div class="broader">
+                <div class="container">
+                    <br />
+                    <center><p class="Login-p">Reset Password</p></center>
+                    <center>
+                        <div class="group">
+                            <input type="email" name="email" required />
+                            <span class="highlight"></span>
+                            <span class="bar"></span>
+                            <label style="padding-left:15px">อีเมลล์</label>
+                        </div>
+                    </center>
+                    
+                    <input class="Login_ok" type="submit" value="OK" />
+                    <input class="Login_ok" type="button" value="Cancel" onclick="location.href='@Url.Action("Index", "Index")';" />
+                   
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
+}
