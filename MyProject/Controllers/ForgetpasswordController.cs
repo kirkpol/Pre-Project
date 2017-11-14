@@ -34,8 +34,8 @@ namespace MyProject.Controllers
                 using (MailMessage mm = new MailMessage("elearning.dpu@gmail.com", check.Email))
                 {
                     mm.Subject = "Reset Password";
-
-                    mm.Body = "My new Password is : " + check.Password;
+                    
+                    mm.Body = "รหัสผ่านใหม่ของคุณคือ : " + check.Password;
 
 
                     mm.IsBodyHtml = false;
