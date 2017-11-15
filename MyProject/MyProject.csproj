@@ -194,6 +194,7 @@
     <Content Include="Views\Profile\changpassword.cshtml" />
     <Content Include="Views\Forgetpassword\EmailPage.cshtml" />
     <Content Include="Views\Forgetpassword\NextStep.cshtml" />
+    <Content Include="Views\PMH\PMH_Create.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

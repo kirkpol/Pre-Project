@@ -11,8 +11,7 @@ namespace MyProject.Models
 {
     using System;
     using System.Collections.Generic;
-    using System.ComponentModel.DataAnnotations;
-
+    
     public partial class Profile
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -25,11 +24,9 @@ namespace MyProject.Models
         public string Password { get; set; }
         public string Firstname { get; set; }
         public string Lastname { get; set; }
+        public System.DateTime Birthday { get; set; }
         public string Sex { get; set; }
         public string Contact { get; set; }
-
-        [DisplayFormat(DataFormatString = "{0: MM/dd/yyyy}")]
-        public System.DateTime Birthday { get; set; }
         public string Congenital_disease { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

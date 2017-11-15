@@ -5,7 +5,7 @@
       <PropertyRef Name="ID_PHM" />
     </Key>
     <Property Name="ID_PHM" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="PHM" Type="text" Nullable="false" />
+    <Property Name="PMH" Type="text" Nullable="false" />
     <Property Name="Symtpomatic" Type="varchar" MaxLength="50" Nullable="false" />
     <Property Name="Email" Type="varchar" MaxLength="50" Nullable="false" />
   </EntityType>
@@ -22,8 +22,24 @@
     <Property Name="Contact" Type="varchar" MaxLength="10" Nullable="false" />
     <Property Name="Congenital_disease" Type="varchar" MaxLength="100" />
   </EntityType>
+  <Association Name="FK_Medical_history_Profile">
+    <End Role="Profile" Type="Self.Profile" Multiplicity="1" />
+    <End Role="Medical_history" Type="Self.Medical_history" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Profile">
+        <PropertyRef Name="Email" />
+      </Principal>
+      <Dependent Role="Medical_history">
+        <PropertyRef Name="Email" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <EntityContainer Name="PredatabaseModelStoreContainer">
     <EntitySet Name="Medical_history" EntityType="Self.Medical_history" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Profile" EntityType="Self.Profile" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_Medical_history_Profile" Association="Self.FK_Medical_history_Profile">
+      <End Role="Profile" EntitySet="Profile" />
+      <End Role="Medical_history" EntitySet="Medical_history" />
+    </AssociationSet>
   </EntityContainer>
 </Schema>

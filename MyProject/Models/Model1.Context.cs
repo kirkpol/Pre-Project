@@ -25,7 +25,7 @@ namespace MyProject.Models
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<Profile> Profiles { get; set; }
         public virtual DbSet<Medical_history> Medical_history { get; set; }
+        public virtual DbSet<Profile> Profiles { get; set; }
     }
 }
