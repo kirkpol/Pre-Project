@@ -1,12 +1,43 @@
-﻿@model IEnumerable<MyProject.Models.Medical_history>
+﻿@model IEnumerable<MyProject.Models.Medical_history>;
 @{
     ViewBag.Title = "Index";
 }
 
 <html>
+
 <body style="background-color:pink">
-    
-    <img src="~/picture/createPMH.png" width="40%" height="40%" style="margin-top:30px" onclick="location.href='@Url.Action("PMH_Create", "PMH")';">
-    @*@Html.ActionLink(" เพิ่มประวัติการรักษา", "PMH_Create", "PMH")*@
+    @Html.AntiForgeryToken()
+    <div style="text-align:center">
+        <div class="container">
+            <br />
+            <img src="~/picture/createPMH.png" width="40%" height="40%" style="margin-top:30px" onclick="location.href='@Url.Action("PMH_Create", "PMH")';">
+            <div class="row">
+
+                <div class="col-md-12 personal-info">
+
+                    @foreach (var item in )
+                    {
+                    <div class="form-group">
+                        <div class="col-md-4" style="text-align:left">
+                        </div>
+                        <div class="col-md-8" style="text-align:left">
+                            <label>@item.</label>
+                            <br />
+                        </div>
+                    </div>
+}
+
+
+
+
+
+                </div>
+            </div>
+            <hr>
+        </div>
+
+    </div>
+
+
 </body>
 </html>

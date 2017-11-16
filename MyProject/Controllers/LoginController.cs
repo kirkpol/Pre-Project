@@ -47,7 +47,8 @@ namespace MyProject.Controllers
 
                          var Cookie_Password = new HttpCookie("C_Password");
                          Cookie_Password.Value = check.Password;
-                         Response.Cookies.Add(Cookie_Password);
+                         Response.Cookies+		this	{MyProject.Controllers.LoginController}	MyProject.Controllers.LoginController
+.Add(Cookie_Password);
 
                          var Cookie_Firstname = new HttpCookie("C_Firstname");
                          Cookie_Firstname.Value = check.Firstname;

@@ -14,8 +14,12 @@ namespace MyProject.Controllers
         // GET: PMH
         public ActionResult PMH_Show()
         {
+            var email = this.Session["Email"];
+            string email_convert = Convert.ToString(email);
 
-            return View();
+            var check = db.Medical_history.Where(a => a.Email.Equals(email_convert)).ToList();
+
+            return View(check);
         }
 
         public ActionResult PMH_Create()
