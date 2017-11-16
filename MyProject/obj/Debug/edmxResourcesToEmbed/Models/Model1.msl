@@ -4,7 +4,7 @@
     <EntitySetMapping Name="Medical_history">
       <EntityTypeMapping TypeName="PredatabaseModel.Medical_history">
         <MappingFragment StoreEntitySet="Medical_history">
-          <ScalarProperty Name="ID_PHM" ColumnName="ID_PHM" />
+          <ScalarProperty Name="ID_PMH" ColumnName="ID_PMH" />
           <ScalarProperty Name="PMH" ColumnName="PMH" />
           <ScalarProperty Name="Symtpomatic" ColumnName="Symtpomatic" />
           <ScalarProperty Name="Email" ColumnName="Email" />

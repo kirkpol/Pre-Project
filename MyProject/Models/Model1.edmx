@@ -7,11 +7,11 @@
       <Schema Namespace="PredatabaseModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Medical_history">
           <Key>
-            <PropertyRef Name="ID_PHM" />
+            <PropertyRef Name="ID_PMH" />
           </Key>
-          <Property Name="ID_PHM" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ID_PMH" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="PMH" Type="text" Nullable="false" />
-          <Property Name="Symtpomatic" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Symtpomatic" Type="text" Nullable="false" />
           <Property Name="Email" Type="varchar" MaxLength="50" Nullable="false" />
         </EntityType>
         <EntityType Name="Profile">
@@ -54,11 +54,11 @@
       <Schema Namespace="PredatabaseModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
         <EntityType Name="Medical_history">
           <Key>
-            <PropertyRef Name="ID_PHM" />
+            <PropertyRef Name="ID_PMH" />
           </Key>
-          <Property Name="ID_PHM" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ID_PMH" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="PMH" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="Symtpomatic" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Symtpomatic" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <NavigationProperty Name="Profile" Relationship="Self.FK_Medical_history_Profile" FromRole="Medical_history" ToRole="Profile" />
         </EntityType>
@@ -105,7 +105,7 @@
           <EntitySetMapping Name="Medical_history">
             <EntityTypeMapping TypeName="PredatabaseModel.Medical_history">
               <MappingFragment StoreEntitySet="Medical_history">
-                <ScalarProperty Name="ID_PHM" ColumnName="ID_PHM" />
+                <ScalarProperty Name="ID_PMH" ColumnName="ID_PMH" />
                 <ScalarProperty Name="PMH" ColumnName="PMH" />
                 <ScalarProperty Name="Symtpomatic" ColumnName="Symtpomatic" />
                 <ScalarProperty Name="Email" ColumnName="Email" />

@@ -4,7 +4,7 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="7fae5ed2dd8b471fb89daed1f8e22e21" Name="Diagram1">
+      <Diagram DiagramId="3bda9333730642969559d4cb47725338" Name="Diagram1">
         <EntityTypeShape EntityType="PredatabaseModel.Medical_history" Width="1.5" PointX="3" PointY="1.375" IsExpanded="true" />
         <EntityTypeShape EntityType="PredatabaseModel.Profile" Width="1.5" PointX="0.75" PointY="1" IsExpanded="true" />
         <AssociationConnector Association="PredatabaseModel.FK_Medical_history_Profile" ManuallyRouted="false" />

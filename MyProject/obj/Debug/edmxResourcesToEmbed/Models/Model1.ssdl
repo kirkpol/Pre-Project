@@ -2,11 +2,11 @@
 <Schema Namespace="PredatabaseModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
   <EntityType Name="Medical_history">
     <Key>
-      <PropertyRef Name="ID_PHM" />
+      <PropertyRef Name="ID_PMH" />
     </Key>
-    <Property Name="ID_PHM" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ID_PMH" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="PMH" Type="text" Nullable="false" />
-    <Property Name="Symtpomatic" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Symtpomatic" Type="text" Nullable="false" />
     <Property Name="Email" Type="varchar" MaxLength="50" Nullable="false" />
   </EntityType>
   <EntityType Name="Profile">

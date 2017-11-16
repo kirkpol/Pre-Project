@@ -14,7 +14,7 @@ namespace MyProject.Models
     
     public partial class Medical_history
     {
-        public int ID_PHM { get; set; }
+        public int ID_PMH { get; set; }
         public string PMH { get; set; }
         public string Symtpomatic { get; set; }
         public string Email { get; set; }

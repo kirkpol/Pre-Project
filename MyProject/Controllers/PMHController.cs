@@ -19,7 +19,7 @@ namespace MyProject.Controllers
 
             var check = db.Medical_history.Where(a => a.Email.Equals(email_convert)).ToList();
 
-            return View(check);
+            return View(check.ToList());
         }
 
         public ActionResult PMH_Create()
