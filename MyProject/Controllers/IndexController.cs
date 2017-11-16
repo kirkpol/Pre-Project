@@ -52,6 +52,10 @@ namespace MyProject.Controllers
         }
 
 
-       
+        public ActionResult test()
+        {
+            return View();
+        }
+
     }
 }
