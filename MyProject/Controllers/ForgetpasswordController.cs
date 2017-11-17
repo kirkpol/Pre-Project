@@ -11,7 +11,8 @@ namespace MyProject.Controllers
 {
     public class ForgetpasswordController : Controller
     {
-        private PredatabaseEntities db = new PredatabaseEntities();
+        private AzurePredatabaseEntities db = new AzurePredatabaseEntities();
+        //private PredatabaseEntities db = new PredatabaseEntities();
         // GET: Forgetpassword
         public ActionResult EmailPage()
         {

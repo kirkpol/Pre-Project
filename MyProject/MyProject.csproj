@@ -108,6 +108,16 @@
     <Content Include="Content\Emailpage.css" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
+    <Content Include="Models\Azure-model.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Azure-model.edmx</DependentUpon>
+      <LastGenOutput>Azure-model.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\Azure-model.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Azure-model.edmx</DependentUpon>
+      <LastGenOutput>Azure-model.cs</LastGenOutput>
+    </Content>
     <Content Include="Models\Model1.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>Model1.edmx</DependentUpon>
@@ -142,11 +152,21 @@
     <Content Include="Models\Model1.edmx.diagram">
       <DependentUpon>Model1.edmx</DependentUpon>
     </Content>
+    <EntityDeploy Include="Models\Azure-model.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Azure-model.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\Azure-model.edmx.diagram">
+      <DependentUpon>Azure-model.edmx</DependentUpon>
+    </Content>
+    <None Include="Properties\PublishProfiles\HelpMepicec - Web Deploy.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
@@ -159,8 +179,23 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\Azure-model.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Azure-model.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Azure-model.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Azure-model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Azure-model.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Azure-model.edmx</DependentUpon>
+    </Compile>
     <Compile Include="Models\Medical_history.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
+      <DependentUpon>Azure-model.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Model1.Context.cs">
       <AutoGen>True</AutoGen>
@@ -178,7 +213,7 @@
       <DependentUpon>Model1.edmx</DependentUpon>
     </Compile>
     <Compile Include="Models\Profile.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
+      <DependentUpon>Azure-model.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

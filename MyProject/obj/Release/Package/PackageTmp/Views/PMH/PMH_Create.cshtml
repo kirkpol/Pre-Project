@@ -1,0 +1,87 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+<head>
+
+</head>
+<html>
+@using (Html.BeginForm())
+{
+    <body style="background-color:pink">
+        @Html.AntiForgeryToken()
+        <div style="text-align:center">
+            <div class="container">
+                <br />
+                <div class="row">
+
+                    <div class="col-md-12 personal-info">
+
+
+                        <div class="form-group">
+                            <div class="col-md-4" style="text-align:left">
+                            </div>
+                            <div class="col-md-8" style="text-align:left">
+                                <input name="Email_Form" class="form-control" type="hidden" value="@HttpContext.Current.Session["Email"]" readonly>
+                                <br />
+                            </div>
+                        </div>
+
+
+
+                        <div class="form-group">
+                            <div class="col-md-4" style="text-align:left">
+                                <label style="color:darkblue;font-size:24px;font-family:'Browallia New'">อาการ : </label>
+                            </div>
+                            <div class="col-md-8" style="text-align:left">
+                                <input name="Symtpomatic" class="form-control" type="text">
+                              
+                                <br />
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="col-md-4" style="text-align:left">
+                                <label style="color:darkblue;font-size:24px;font-family:'Browallia New'">รายละเอียดของอาการ : </label>
+                            </div>
+                            <div class="col-md-8" style="text-align:left">
+                                <input class="form-control" id="PMH" name="PMH" type="text" >
+                                
+                                <br />
+                            </div>
+                        </div>
+
+                        
+
+
+
+                        <div class="form-group">
+                            <div class="col-md-4">
+                            </div>
+                            <div class="col-md-8" style="text-align:left">
+                                <input class="btn btn-default" type="submit" value="บันทึก" onclick="myFunction()" />
+                                <input class="btn btn-default" type="submit" value="ยกเลิก" onclick="location.href='@Url.Action("Show", "Profile")';" />
+                            </div>
+                        </div>
+
+                        @if (ViewBag.ok != null)
+                        {
+
+                            <script>
+                                alert("เปลี่ยนรหัสผ่านเรียบร้อย");
+                            </script>
+
+                        }
+
+
+                    </div>
+                </div>
+                <hr>
+            </div>
+
+        </div>
+
+    </body>
+}
+</html>
+

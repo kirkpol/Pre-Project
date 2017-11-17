@@ -4,11 +4,15 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using System.Web.Security;
+using MyProject.Models;
 
 namespace MyProject.Controllers
 {
+    
+
     public class IndexController : Controller
     {
+        private AzurePredatabaseEntities db = new AzurePredatabaseEntities();
         // GET: Index
 
 

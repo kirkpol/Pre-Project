@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="PredatabaseModel1StoreContainer" CdmEntityContainer="AzurePredatabaseEntities">
+    <EntitySetMapping Name="Medical_history">
+      <EntityTypeMapping TypeName="PredatabaseModel1.Medical_history">
+        <MappingFragment StoreEntitySet="Medical_history">
+          <ScalarProperty Name="ID_PMH" ColumnName="ID_PMH" />
+          <ScalarProperty Name="PMH" ColumnName="PMH" />
+          <ScalarProperty Name="Symtpomatic" ColumnName="Symtpomatic" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Profiles">
+      <EntityTypeMapping TypeName="PredatabaseModel1.Profile">
+        <MappingFragment StoreEntitySet="Profile">
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="Firstname" ColumnName="Firstname" />
+          <ScalarProperty Name="Lastname" ColumnName="Lastname" />
+          <ScalarProperty Name="Birthday" ColumnName="Birthday" />
+          <ScalarProperty Name="Sex" ColumnName="Sex" />
+          <ScalarProperty Name="Contact" ColumnName="Contact" />
+          <ScalarProperty Name="Congenital_disease" ColumnName="Congenital_disease" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

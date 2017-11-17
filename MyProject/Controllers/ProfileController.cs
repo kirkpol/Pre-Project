@@ -11,7 +11,8 @@ namespace MyProject.Controllers
 {
     public class ProfileController : Controller
     {
-        private PredatabaseEntities db = new PredatabaseEntities();
+        private AzurePredatabaseEntities db = new AzurePredatabaseEntities();
+        //private PredatabaseEntities db = new PredatabaseEntities();
         // GET: Profile
         [HttpGet]
         public ActionResult Show(int? id)

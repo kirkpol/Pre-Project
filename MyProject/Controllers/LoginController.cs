@@ -12,7 +12,8 @@ namespace MyProject.Controllers
 {
     public class LoginController : Controller
     {
-        private PredatabaseEntities db = new PredatabaseEntities();
+        private AzurePredatabaseEntities db = new AzurePredatabaseEntities();
+        //private PredatabaseEntities db = new PredatabaseEntities();
 
 
         public ActionResult Login()

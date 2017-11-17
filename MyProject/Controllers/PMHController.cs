@@ -10,7 +10,8 @@ namespace MyProject.Controllers
 {
     public class PMHController : Controller
     {
-        private PredatabaseEntities db = new PredatabaseEntities();
+        private AzurePredatabaseEntities db = new AzurePredatabaseEntities();
+        //private PredatabaseEntities db = new PredatabaseEntities();
         // GET: PMH
         public ActionResult PMH_Show()
         {

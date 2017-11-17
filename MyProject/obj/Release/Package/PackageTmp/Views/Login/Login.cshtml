@@ -1,0 +1,52 @@
+﻿@{
+    ViewBag.Title = "SignIn";
+}
+<link href="~/Content/login.css" rel="stylesheet" type="text/css" />
+@using (Html.BeginForm())
+{
+    <html>
+    <body style="background-color:pink">
+
+        @Html.AntiForgeryToken()
+
+        <div>
+            <div class="broader">
+                <div class="container" >
+                    <center><p class="Login-p">Login</p></center>
+
+                    <center>
+                        <div class="group">
+                            <input type="email" name="email" required />
+                            <span class="highlight"></span>
+                            <span class="bar"></span>
+                            <label style="padding-left:15px">อีเมลล์</label>
+                        </div>
+                    </center>
+
+                    <center>
+                        <div class="group">
+                            <input type="password" name="password" required />
+                            <span class=" =highlight"></span>
+                            <span class="bar"></span>
+                            <label style="padding-left:15px">รหัสผ่าน</label>
+                            <p style="color:red ; font-weight:bold">@ViewBag.Message</p>
+                            <p style="color:red ; font-weight:bold">@ViewBag.Message1</p>
+                        </div>
+                    </center>
+
+                    <input class="Login_ok" type="submit" value="OK" />
+                    <input class="Login_ok" type="button" value="Cancel" onclick="location.href='@Url.Action("Index", "Index")';" />
+                    <div style="margin:10px;text-align:center">
+                        @Html.ActionLink("สมัครสมาชิก", "Registor", "Registor")
+                    </div>
+
+                    <div style="margin:10px;text-align:center">
+                        @Html.ActionLink("ลืมรหัสผ่าน", "EmailPage", "ForgetPassword")
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
+}
