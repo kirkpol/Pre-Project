@@ -81,8 +81,8 @@ namespace MyProject.Controllers
                          Response.Cookies.Add(Cookie_Contact);
                          */
                         string Age_convert = age.ToString();
-                        DateTime dt = DateTime.ParseExact(check.Birthday.ToString(), "MM/dd/yyyy hh:mm:ss tt", CultureInfo.InvariantCulture);
-                        string s = dt.ToString("MM/dd/yyyy", CultureInfo.InvariantCulture);
+                        //DateTime dt = DateTime.ParseExact(check.Birthday.ToString(), "MM/dd/yyyy hh:mm:ss tt", CultureInfo.InvariantCulture);
+                        //string s = check.Birthday.ToString("dd/MM/yyyy", CultureInfo.InvariantCulture);
 
                         /*if (check.Sex != null)
                         {
@@ -99,12 +99,12 @@ namespace MyProject.Controllers
                             }
 
                         }*/
-                        
+
                         Session["Email"] = check.Email;
                         Session["Password"] = check.Password;
                         Session["Firstname"] = check.Firstname;
                         Session["Lastname"] = check.Lastname;
-                        Session["Birthday"] = check.Birthday;
+                        Session["Birthday"] = check.Birthday ;
                         Session["Congenital"] = check.Congenital_disease;
                         Session["Age"] = Age_convert;
                         Session["Contact"] = check.Contact;

@@ -63,8 +63,8 @@ namespace MyProject.Controllers
                             DateTime now = DateTime.Now;
                             int age = now.Year - GT_login.Birthday.Year;
                             string Age_convert = age.ToString();
-                            DateTime dt = DateTime.ParseExact(GT_login.Birthday.ToString(), "MM/dd/yyyy hh:mm:ss tt", CultureInfo.InvariantCulture);
-                            string s = dt.ToString("dd/M/yyyy", CultureInfo.InvariantCulture);
+                            //DateTime dt = DateTime.ParseExact(GT_login.Birthday.ToString(), "MM/dd/yyyy hh:mm:ss tt", CultureInfo.InvariantCulture);
+                            string s = GT_login.Birthday.ToString("dd/MM/yyyy", CultureInfo.InvariantCulture);
 
                             /*if (GT_login.Sex != null)
                             {
