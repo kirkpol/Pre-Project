@@ -51,8 +51,8 @@
                         </div>
                         @if (Model.Birthday != null)
                         {
-                            DateTime dt = DateTime.ParseExact(Model.Birthday.ToString(), "MM/dd/yyyy hh:mm:ss tt", CultureInfo.InvariantCulture);
-                            string s = dt.ToString("MM/dd/yyyy", CultureInfo.InvariantCulture);
+                            //DateTime dt = DateTime.ParseExact(Model.Birthday.ToString(), "MM/dd/yyyy hh:mm:ss tt", CultureInfo.InvariantCulture);
+                            string s = Model.Birthday.ToString("MM/dd/yyyy", CultureInfo.InvariantCulture);
                             <div class="form-group">
                                 <div class="col-md-4" style="text-align:left">
                                     <label style="color:darkblue;font-size:24px;font-family:'Browallia New'">วัดเกิด : </label>

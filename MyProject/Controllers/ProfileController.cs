@@ -5,7 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using MyProject.Models;
 using System.Data.Entity.Validation;
-
+using System.Globalization;
 
 namespace MyProject.Controllers
 {
@@ -52,6 +52,8 @@ namespace MyProject.Controllers
             string Congenital_update = Request.Form["Congenital"];
             string Birthday_update = Request.Form["Birthday_update"];
 
+            
+
             if (ModelState.IsValid)
             {
                 if (Email_update != null)
@@ -60,12 +62,13 @@ namespace MyProject.Controllers
 
 
 
+                    DateTime date = DateTime.ParseExact(Birthday_update, "dd/MM/yyyy", null);
 
                     check_edit.Firstname = First_update;
                     check_edit.Lastname = Lastname_update;
                     check_edit.Contact = Contact_update;
                     check_edit.Congenital_disease = Congenital_update;
-                    //check_edit.Birthday = Birthday_update; 
+                    check_edit.Birthday = date; 
 
                     try
                     {
