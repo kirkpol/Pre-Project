@@ -8,6 +8,11 @@
         <EntityTypeShape EntityType="PredatabaseModel1.Medical_history" Width="1.5" PointX="3" PointY="1.375" IsExpanded="true" />
         <EntityTypeShape EntityType="PredatabaseModel1.Profile" Width="1.5" PointX="0.75" PointY="1" IsExpanded="true" />
         <AssociationConnector Association="PredatabaseModel1.FK_Medical_history_Profile" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="PredatabaseModel1.CauseTable" Width="1.5" PointX="5" PointY="1.875" />
+        <EntityTypeShape EntityType="PredatabaseModel1.MuscleTable" Width="1.5" PointX="7.25" PointY="0.625" />
+        <EntityTypeShape EntityType="PredatabaseModel1.SuggestTable" Width="1.5" PointX="7.25" PointY="3" />
+        <AssociationConnector Association="PredatabaseModel1.Cause_Suggest" />
+        <AssociationConnector Association="PredatabaseModel1.Muscle_Cause" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

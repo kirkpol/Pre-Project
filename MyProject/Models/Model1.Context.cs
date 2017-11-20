@@ -27,5 +27,8 @@ namespace MyProject.Models
     
         public virtual DbSet<Medical_history> Medical_history { get; set; }
         public virtual DbSet<Profile> Profiles { get; set; }
+        public virtual DbSet<CauseTable> CauseTables { get; set; }
+        public virtual DbSet<MuscleTable> MuscleTables { get; set; }
+        public virtual DbSet<SuggestTable> SuggestTables { get; set; }
     }
 }

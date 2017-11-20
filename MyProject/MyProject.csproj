@@ -194,6 +194,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Azure-model.edmx</DependentUpon>
     </Compile>
+    <Compile Include="Models\CauseTable.cs">
+      <DependentUpon>Azure-model.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\Medical_history.cs">
       <DependentUpon>Azure-model.tt</DependentUpon>
     </Compile>
@@ -212,7 +215,13 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Model1.edmx</DependentUpon>
     </Compile>
+    <Compile Include="Models\MuscleTable.cs">
+      <DependentUpon>Azure-model.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\Profile.cs">
+      <DependentUpon>Azure-model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\SuggestTable.cs">
       <DependentUpon>Azure-model.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />

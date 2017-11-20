@@ -4,7 +4,22 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="PredatabaseModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="PredatabaseModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Cause_Suggest">
+          <Key>
+            <PropertyRef Name="ID_Cause" />
+            <PropertyRef Name="ID_Inflamed" />
+          </Key>
+          <Property Name="ID_Cause" Type="int" Nullable="false" />
+          <Property Name="ID_Inflamed" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="CauseTable">
+          <Key>
+            <PropertyRef Name="ID_Cause" />
+          </Key>
+          <Property Name="ID_Cause" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Cause" Type="text" />
+        </EntityType>
         <EntityType Name="Medical_history">
           <Key>
             <PropertyRef Name="ID_PMH" />
@@ -13,6 +28,21 @@
           <Property Name="PMH" Type="text" Nullable="false" />
           <Property Name="Symtpomatic" Type="text" Nullable="false" />
           <Property Name="Email" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Muscle_Cause">
+          <Key>
+            <PropertyRef Name="ID_Muscle" />
+            <PropertyRef Name="ID_Cause" />
+          </Key>
+          <Property Name="ID_Muscle" Type="int" Nullable="false" />
+          <Property Name="ID_Cause" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="MuscleTable">
+          <Key>
+            <PropertyRef Name="ID_Muscle" />
+          </Key>
+          <Property Name="ID_Muscle" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="MUscle" Type="varchar(max)" Nullable="false" />
         </EntityType>
         <EntityType Name="Profile">
           <Key>
@@ -27,6 +57,38 @@
           <Property Name="Contact" Type="varchar" MaxLength="10" Nullable="false" />
           <Property Name="Congenital_disease" Type="varchar" MaxLength="100" />
         </EntityType>
+        <EntityType Name="SuggestTable">
+          <Key>
+            <PropertyRef Name="ID_Inflamed" />
+          </Key>
+          <Property Name="ID_Inflamed" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Inflamed" Type="text" Nullable="false" />
+          <Property Name="Suggest" Type="text" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_Cause_Suggest_CauseTable">
+          <End Role="CauseTable" Type="Self.CauseTable" Multiplicity="1" />
+          <End Role="Cause_Suggest" Type="Self.Cause_Suggest" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CauseTable">
+              <PropertyRef Name="ID_Cause" />
+            </Principal>
+            <Dependent Role="Cause_Suggest">
+              <PropertyRef Name="ID_Cause" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Cause_Suggest_SuggestTable">
+          <End Role="SuggestTable" Type="Self.SuggestTable" Multiplicity="1" />
+          <End Role="Cause_Suggest" Type="Self.Cause_Suggest" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SuggestTable">
+              <PropertyRef Name="ID_Inflamed" />
+            </Principal>
+            <Dependent Role="Cause_Suggest">
+              <PropertyRef Name="ID_Inflamed" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_Medical_history_Profile">
           <End Role="Profile" Type="Self.Profile" Multiplicity="1" />
           <End Role="Medical_history" Type="Self.Medical_history" Multiplicity="*" />
@@ -39,16 +101,60 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_Muscle_Cause_CauseTable">
+          <End Role="CauseTable" Type="Self.CauseTable" Multiplicity="1" />
+          <End Role="Muscle_Cause" Type="Self.Muscle_Cause" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CauseTable">
+              <PropertyRef Name="ID_Cause" />
+            </Principal>
+            <Dependent Role="Muscle_Cause">
+              <PropertyRef Name="ID_Cause" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Muscle_Cause_MuscleTable">
+          <End Role="MuscleTable" Type="Self.MuscleTable" Multiplicity="1" />
+          <End Role="Muscle_Cause" Type="Self.Muscle_Cause" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MuscleTable">
+              <PropertyRef Name="ID_Muscle" />
+            </Principal>
+            <Dependent Role="Muscle_Cause">
+              <PropertyRef Name="ID_Muscle" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <EntityContainer Name="PredatabaseModelStoreContainer">
+          <EntitySet Name="Cause_Suggest" EntityType="Self.Cause_Suggest" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CauseTable" EntityType="Self.CauseTable" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Medical_history" EntityType="Self.Medical_history" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Muscle_Cause" EntityType="Self.Muscle_Cause" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="MuscleTable" EntityType="Self.MuscleTable" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Profile" EntityType="Self.Profile" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="SuggestTable" EntityType="Self.SuggestTable" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_Cause_Suggest_CauseTable" Association="Self.FK_Cause_Suggest_CauseTable">
+            <End Role="CauseTable" EntitySet="CauseTable" />
+            <End Role="Cause_Suggest" EntitySet="Cause_Suggest" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Cause_Suggest_SuggestTable" Association="Self.FK_Cause_Suggest_SuggestTable">
+            <End Role="SuggestTable" EntitySet="SuggestTable" />
+            <End Role="Cause_Suggest" EntitySet="Cause_Suggest" />
+          </AssociationSet>
           <AssociationSet Name="FK_Medical_history_Profile" Association="Self.FK_Medical_history_Profile">
             <End Role="Profile" EntitySet="Profile" />
             <End Role="Medical_history" EntitySet="Medical_history" />
           </AssociationSet>
+          <AssociationSet Name="FK_Muscle_Cause_CauseTable" Association="Self.FK_Muscle_Cause_CauseTable">
+            <End Role="CauseTable" EntitySet="CauseTable" />
+            <End Role="Muscle_Cause" EntitySet="Muscle_Cause" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Muscle_Cause_MuscleTable" Association="Self.FK_Muscle_Cause_MuscleTable">
+            <End Role="MuscleTable" EntitySet="MuscleTable" />
+            <End Role="Muscle_Cause" EntitySet="Muscle_Cause" />
+          </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="PredatabaseModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -95,7 +201,52 @@
             <End Role="Profile" EntitySet="Profiles" />
             <End Role="Medical_history" EntitySet="Medical_history" />
           </AssociationSet>
+          <EntitySet Name="CauseTables" EntityType="PredatabaseModel.CauseTable" />
+          <EntitySet Name="MuscleTables" EntityType="PredatabaseModel.MuscleTable" />
+          <EntitySet Name="SuggestTables" EntityType="PredatabaseModel.SuggestTable" />
+          <AssociationSet Name="Cause_Suggest" Association="PredatabaseModel.Cause_Suggest">
+            <End Role="CauseTable" EntitySet="CauseTables" />
+            <End Role="SuggestTable" EntitySet="SuggestTables" />
+          </AssociationSet>
+          <AssociationSet Name="Muscle_Cause" Association="PredatabaseModel.Muscle_Cause">
+            <End Role="CauseTable" EntitySet="CauseTables" />
+            <End Role="MuscleTable" EntitySet="MuscleTables" />
+          </AssociationSet>
         </EntityContainer>
+        <EntityType Name="CauseTable">
+          <Key>
+            <PropertyRef Name="ID_Cause" />
+          </Key>
+          <Property Name="ID_Cause" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Cause" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="SuggestTables" Relationship="PredatabaseModel.Cause_Suggest" FromRole="CauseTable" ToRole="SuggestTable" />
+          <NavigationProperty Name="MuscleTables" Relationship="PredatabaseModel.Muscle_Cause" FromRole="CauseTable" ToRole="MuscleTable" />
+        </EntityType>
+        <EntityType Name="MuscleTable">
+          <Key>
+            <PropertyRef Name="ID_Muscle" />
+          </Key>
+          <Property Name="ID_Muscle" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="MUscle" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="CauseTables" Relationship="PredatabaseModel.Muscle_Cause" FromRole="MuscleTable" ToRole="CauseTable" />
+        </EntityType>
+        <EntityType Name="SuggestTable">
+          <Key>
+            <PropertyRef Name="ID_Inflamed" />
+          </Key>
+          <Property Name="ID_Inflamed" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Inflamed" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Suggest" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="CauseTables" Relationship="PredatabaseModel.Cause_Suggest" FromRole="SuggestTable" ToRole="CauseTable" />
+        </EntityType>
+        <Association Name="Cause_Suggest">
+          <End Type="PredatabaseModel.CauseTable" Role="CauseTable" Multiplicity="*" />
+          <End Type="PredatabaseModel.SuggestTable" Role="SuggestTable" Multiplicity="*" />
+        </Association>
+        <Association Name="Muscle_Cause">
+          <End Type="PredatabaseModel.CauseTable" Role="CauseTable" Multiplicity="*" />
+          <End Type="PredatabaseModel.MuscleTable" Role="MuscleTable" Multiplicity="*" />
+        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -126,6 +277,47 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <EntitySetMapping Name="CauseTables">
+            <EntityTypeMapping TypeName="PredatabaseModel.CauseTable">
+              <MappingFragment StoreEntitySet="CauseTable">
+                <ScalarProperty Name="Cause" ColumnName="Cause" />
+                <ScalarProperty Name="ID_Cause" ColumnName="ID_Cause" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MuscleTables">
+            <EntityTypeMapping TypeName="PredatabaseModel.MuscleTable">
+              <MappingFragment StoreEntitySet="MuscleTable">
+                <ScalarProperty Name="MUscle" ColumnName="MUscle" />
+                <ScalarProperty Name="ID_Muscle" ColumnName="ID_Muscle" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SuggestTables">
+            <EntityTypeMapping TypeName="PredatabaseModel.SuggestTable">
+              <MappingFragment StoreEntitySet="SuggestTable">
+                <ScalarProperty Name="Suggest" ColumnName="Suggest" />
+                <ScalarProperty Name="Inflamed" ColumnName="Inflamed" />
+                <ScalarProperty Name="ID_Inflamed" ColumnName="ID_Inflamed" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <AssociationSetMapping Name="Cause_Suggest" TypeName="PredatabaseModel.Cause_Suggest" StoreEntitySet="Cause_Suggest">
+            <EndProperty Name="SuggestTable">
+              <ScalarProperty Name="ID_Inflamed" ColumnName="ID_Inflamed" />
+            </EndProperty>
+            <EndProperty Name="CauseTable">
+              <ScalarProperty Name="ID_Cause" ColumnName="ID_Cause" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="Muscle_Cause" TypeName="PredatabaseModel.Muscle_Cause" StoreEntitySet="Muscle_Cause">
+            <EndProperty Name="MuscleTable">
+              <ScalarProperty Name="ID_Muscle" ColumnName="ID_Muscle" />
+            </EndProperty>
+            <EndProperty Name="CauseTable">
+              <ScalarProperty Name="ID_Cause" ColumnName="ID_Cause" />
+            </EndProperty>
+          </AssociationSetMapping>
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>
