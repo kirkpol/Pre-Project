@@ -68,5 +68,16 @@ namespace MyProject.Controllers
             }
             return RedirectToAction("PMH_Create", "PMH");
         }
+
+        public ActionResult PMHDetail(int? id )
+        {
+
+            Medical_history PHM = db.Medical_history.Find(id);
+            if (PHM == null)
+            {
+                return HttpNotFound();
+            }
+            return View(PHM);
+        }
     }
 }

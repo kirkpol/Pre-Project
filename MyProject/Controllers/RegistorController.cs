@@ -32,10 +32,12 @@ namespace MyProject.Controllers
             string Password_Comfirm_registor = Request.Form["password_two"];
             string First_registor = Request.Form["firstname"];
             string Lastname_registor = Request.Form["lastname"];
-            string Birthday_registor = Request.Form["birthday"];
+            //string Birthday_registor = Request.Form["birthday"];
+            DateTime Birthday_registor =  Convert.ToDateTime(Request.Form["birthday"]);
             string Sex_registor = Request.Form["sex"];
             string Contact_registor = Request.Form["Contact"];
           
+
 
             if (ModelState.IsValid)
             {

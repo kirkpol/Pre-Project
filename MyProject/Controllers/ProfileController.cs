@@ -51,8 +51,8 @@ namespace MyProject.Controllers
             string Contact_update = Request.Form["Contact_update"];
             string Congenital_update = Request.Form["Congenital"];
             string Birthday_update = Request.Form["Birthday_update"];
+            //DateTime Birthday_update = (Request.Form["birthday"]);
 
-            
 
             if (ModelState.IsValid)
             {
@@ -60,15 +60,26 @@ namespace MyProject.Controllers
                 {
                     var check_edit = db.Profiles.Where(a => a.Email.Equals(Email_update)).FirstOrDefault();
 
+                    DateTime result;
+                    if (!DateTime.TryParse(Birthday_update,out result))
+                    {
+                        result = DateTime.ParseExact(Birthday_update, "dd/MM/yyyy", System.Globalization.CultureInfo.InvariantCulture);
+                        
+                    }
 
-
-                    DateTime date = DateTime.ParseExact(Birthday_update, "dd/MM/yyyy", null);
+                    
+                    
+                  
+                    //DateTime date = DateTime.ParseExact(Birthday_update, "dd/MM/yyyy", CultureInfo.InvariantCulture);
 
                     check_edit.Firstname = First_update;
                     check_edit.Lastname = Lastname_update;
                     check_edit.Contact = Contact_update;
                     check_edit.Congenital_disease = Congenital_update;
-                    check_edit.Birthday = date; 
+                    check_edit.Birthday = result;
+                 
+
+
 
                     try
                     {
