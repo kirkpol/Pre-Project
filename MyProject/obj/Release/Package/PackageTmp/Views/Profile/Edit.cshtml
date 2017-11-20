@@ -51,15 +51,15 @@
                         </div>
                         @if (Model.Birthday != null)
                         {
-                            DateTime dt = DateTime.ParseExact(Model.Birthday.ToString(), "MM/dd/yyyy hh:mm:ss tt", CultureInfo.InvariantCulture);
-                            string s = dt.ToString("MM/dd/yyyy", CultureInfo.InvariantCulture);
+                            //DateTime dt = DateTime.ParseExact(Model.Birthday.ToString(), "MM/dd/yyyy hh:mm:ss tt", CultureInfo.InvariantCulture);
+                            string s = Model.Birthday.ToString("MM/dd/yyyy", CultureInfo.InvariantCulture);
                             <div class="form-group">
                                 <div class="col-md-4" style="text-align:left">
                                     <label style="color:darkblue;font-size:24px;font-family:'Browallia New'">วัดเกิด : </label>
                                 </div>
                                 <div class="col-md-8" style="text-align:left">
                                     <input name="Birthday_update" class="form-control" type="datetime" value="@s">
-                                    <label style="color:red">***ถ้าหากวันที่ถูกอยู่แล้วไม่ต้องแก้ไข***</label>
+                                    <label style="color:red">***ดด/วว/ปปปป***</label>
                                     <br />
                                 </div>
                             </div>
@@ -90,7 +90,7 @@
                                 <label style="color:darkblue;font-size:24px;font-family:'Browallia New'">เบอร์ติดต่อ : </label>
                             </div>
                             <div class="col-md-8" style="text-align:left">
-                                <input name="Contact_update" class="form-control" type="text" value="@Model.Contact">
+                                <input name="Contact_update" class="form-control" maxlength="10" type="text" value="@Model.Contact">
                                 <br />
                             </div>
                         </div>
@@ -99,16 +99,16 @@
 
 
 
-                        <div class="form-group">
-                            <div class="col-md-4">
-                            </div>
-                            <div class="col-md-8" style="text-align:left">
+                            <div class="form-group">
+                                <div class="col-md-4">
+                                </div>
+                                <div class="col-md-8" style="text-align:left">
 
-                                <input class="btn btn-default" type="submit" value="บันทึก" />
-                                <input class="btn btn-default" type="button" value="ยกเลิก" onclick="location.href='@Url.Action("Show", "Profile")';" />
+                                    <input class="btn btn-default" type="submit" value="บันทึก" />
+                                    <input class="btn btn-default" type="button" value="ยกเลิก" onclick="location.href='@Url.Action("Show", "Profile")';" />
 
+                                </div>
                             </div>
-                        </div>
 
                         @if (ViewBag.ok != null)
                         {
