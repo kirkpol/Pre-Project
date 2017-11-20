@@ -58,6 +58,21 @@ namespace MyProject.Controllers
 
         public ActionResult test()
         {
+
+
+
+
+
+            string test1 = "test";
+
+
+
+
+
+
+
+
+
             return View();
         }
 
