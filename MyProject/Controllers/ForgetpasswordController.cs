@@ -64,4 +64,11 @@ namespace MyProject.Controllers
             return View();
         }
     }
+
+    internal class AzurePredatabaseEntities
+    {
+        public AzurePredatabaseEntities()
+        {
+        }
+    }
 }
