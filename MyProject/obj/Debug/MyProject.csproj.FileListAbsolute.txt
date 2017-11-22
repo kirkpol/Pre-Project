@@ -434,3 +434,6 @@ D:\Pre-Project\MyProject\obj\Debug\MyProject.csprojResolveAssemblyReference.cach
 D:\Pre-Project\MyProject\obj\Debug\MyProject.csproj.CoreCompileInputs.cache
 D:\Pre-Project\MyProject\obj\Debug\MyProject.dll
 D:\Pre-Project\MyProject\obj\Debug\MyProject.pdb
+X:\ProjectDBJ\Pre-Project\MyProject\obj\Debug\MyProject.csprojResolveAssemblyReference.cache
+X:\ProjectDBJ\Pre-Project\MyProject\obj\Debug\MyProject.csproj.CoreCompileInputs.cache
+X:\ProjectDBJ\Pre-Project\MyProject\obj\Debug\MyProject.pdb
