@@ -12,8 +12,8 @@ namespace MyProject.Controllers
 
     public class IndexController : Controller
     {
-       // private AzurePredatabaseEntities db = new AzurePredatabaseEntities();
-        private PredatabaseEntities db = new PredatabaseEntities();
+        private DBJ_DBEntities db = new DBJ_DBEntities();
+        //private PredatabaseEntities db = new PredatabaseEntities();
         // GET: Index
 
 

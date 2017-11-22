@@ -1,0 +1,92 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="DBJ_DBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="CauseTable">
+    <Key>
+      <PropertyRef Name="ID_Cause" />
+    </Key>
+    <Property Name="ID_Cause" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Cause" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="SuggestTables" Relationship="Self.Cause_Suggest" FromRole="CauseTable" ToRole="SuggestTable" />
+    <NavigationProperty Name="MuscleTables" Relationship="Self.Muscle_Cause" FromRole="CauseTable" ToRole="MuscleTable" />
+  </EntityType>
+  <EntityType Name="Medical_history">
+    <Key>
+      <PropertyRef Name="ID_PMH" />
+    </Key>
+    <Property Name="ID_PMH" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="PMH" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Symtpomatic" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="Profile" Relationship="Self.FK_Medical_history_Profile" FromRole="Medical_history" ToRole="Profile" />
+  </EntityType>
+  <EntityType Name="MuscleTable">
+    <Key>
+      <PropertyRef Name="ID_Muscle" />
+    </Key>
+    <Property Name="ID_Muscle" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="MUscle" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="CauseTables" Relationship="Self.Muscle_Cause" FromRole="MuscleTable" ToRole="CauseTable" />
+  </EntityType>
+  <EntityType Name="Profile">
+    <Key>
+      <PropertyRef Name="Email" />
+    </Key>
+    <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Password" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Firstname" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Lastname" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Birthday" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="Sex" Type="String" MaxLength="5" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Contact" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Congenital_disease" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Medical_history" Relationship="Self.FK_Medical_history_Profile" FromRole="Profile" ToRole="Medical_history" />
+  </EntityType>
+  <EntityType Name="SuggestTable">
+    <Key>
+      <PropertyRef Name="ID_Inflamed" />
+    </Key>
+    <Property Name="ID_Inflamed" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Inflamed" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Suggest" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="CauseTables" Relationship="Self.Cause_Suggest" FromRole="SuggestTable" ToRole="CauseTable" />
+  </EntityType>
+  <Association Name="FK_Medical_history_Profile">
+    <End Role="Profile" Type="Self.Profile" Multiplicity="1" />
+    <End Role="Medical_history" Type="Self.Medical_history" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Profile">
+        <PropertyRef Name="Email" />
+      </Principal>
+      <Dependent Role="Medical_history">
+        <PropertyRef Name="Email" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Cause_Suggest">
+    <End Role="CauseTable" Type="Self.CauseTable" Multiplicity="*" />
+    <End Role="SuggestTable" Type="Self.SuggestTable" Multiplicity="*" />
+  </Association>
+  <Association Name="Muscle_Cause">
+    <End Role="CauseTable" Type="Self.CauseTable" Multiplicity="*" />
+    <End Role="MuscleTable" Type="Self.MuscleTable" Multiplicity="*" />
+  </Association>
+  <EntityContainer Name="DBJ_DBEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="CauseTables" EntityType="Self.CauseTable" />
+    <EntitySet Name="Medical_history" EntityType="Self.Medical_history" />
+    <EntitySet Name="MuscleTables" EntityType="Self.MuscleTable" />
+    <EntitySet Name="Profiles" EntityType="Self.Profile" />
+    <EntitySet Name="SuggestTables" EntityType="Self.SuggestTable" />
+    <AssociationSet Name="FK_Medical_history_Profile" Association="Self.FK_Medical_history_Profile">
+      <End Role="Profile" EntitySet="Profiles" />
+      <End Role="Medical_history" EntitySet="Medical_history" />
+    </AssociationSet>
+    <AssociationSet Name="Cause_Suggest" Association="Self.Cause_Suggest">
+      <End Role="CauseTable" EntitySet="CauseTables" />
+      <End Role="SuggestTable" EntitySet="SuggestTables" />
+    </AssociationSet>
+    <AssociationSet Name="Muscle_Cause" Association="Self.Muscle_Cause">
+      <End Role="CauseTable" EntitySet="CauseTables" />
+      <End Role="MuscleTable" EntitySet="MuscleTables" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
