@@ -43,5 +43,50 @@
       <End Role="Profile" EntitySet="Profiles" />
       <End Role="Medical_history" EntitySet="Medical_history" />
     </AssociationSet>
+    <EntitySet Name="CauseTables" EntityType="PredatabaseModel1.CauseTable" />
+    <EntitySet Name="MuscleTables" EntityType="PredatabaseModel1.MuscleTable" />
+    <EntitySet Name="SuggestTables" EntityType="PredatabaseModel1.SuggestTable" />
+    <AssociationSet Name="Cause_Suggest" Association="PredatabaseModel1.Cause_Suggest">
+      <End Role="CauseTable" EntitySet="CauseTables" />
+      <End Role="SuggestTable" EntitySet="SuggestTables" />
+    </AssociationSet>
+    <AssociationSet Name="Muscle_Cause" Association="PredatabaseModel1.Muscle_Cause">
+      <End Role="CauseTable" EntitySet="CauseTables" />
+      <End Role="MuscleTable" EntitySet="MuscleTables" />
+    </AssociationSet>
   </EntityContainer>
+  <EntityType Name="CauseTable">
+    <Key>
+      <PropertyRef Name="ID_Cause" />
+    </Key>
+    <Property Name="ID_Cause" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Cause" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="SuggestTables" Relationship="PredatabaseModel1.Cause_Suggest" FromRole="CauseTable" ToRole="SuggestTable" />
+    <NavigationProperty Name="MuscleTables" Relationship="PredatabaseModel1.Muscle_Cause" FromRole="CauseTable" ToRole="MuscleTable" />
+  </EntityType>
+  <EntityType Name="MuscleTable">
+    <Key>
+      <PropertyRef Name="ID_Muscle" />
+    </Key>
+    <Property Name="ID_Muscle" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="MUscle" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="CauseTables" Relationship="PredatabaseModel1.Muscle_Cause" FromRole="MuscleTable" ToRole="CauseTable" />
+  </EntityType>
+  <EntityType Name="SuggestTable">
+    <Key>
+      <PropertyRef Name="ID_Inflamed" />
+    </Key>
+    <Property Name="ID_Inflamed" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Inflamed" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Suggest" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="CauseTables" Relationship="PredatabaseModel1.Cause_Suggest" FromRole="SuggestTable" ToRole="CauseTable" />
+  </EntityType>
+  <Association Name="Cause_Suggest">
+    <End Type="PredatabaseModel1.CauseTable" Role="CauseTable" Multiplicity="*" />
+    <End Type="PredatabaseModel1.SuggestTable" Role="SuggestTable" Multiplicity="*" />
+  </Association>
+  <Association Name="Muscle_Cause">
+    <End Type="PredatabaseModel1.CauseTable" Role="CauseTable" Multiplicity="*" />
+    <End Type="PredatabaseModel1.MuscleTable" Role="MuscleTable" Multiplicity="*" />
+  </Association>
 </Schema>

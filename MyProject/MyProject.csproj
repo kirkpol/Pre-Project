@@ -133,16 +133,10 @@
     <Content Include="picture\map.png" />
     <Content Include="picture\Picture1.png" />
     <Content Include="picture\createPMH.png" />
-    <Content Include="picture\ด้านหน้า\มือขวา.png" />
-    <Content Include="picture\ด้านหน้า\มือซ้าย.png" />
-    <Content Include="picture\ด้านหน้า\หน้า.png" />
-    <Content Include="picture\ด้านหน้า\หน้าแบบตัด.png" />
-    <Content Include="picture\ด้านหน้า\เข่าขวา.png" />
-    <Content Include="picture\ด้านหน้า\เข่าซ้าย.png" />
-    <Content Include="picture\ด้านหน้า\เท้าขวา.png" />
-    <Content Include="picture\ด้านหน้า\เท้าซ้าย.png" />
-    <Content Include="picture\ด้านหน้า\แขนขวา.png" />
-    <Content Include="picture\ด้านหน้า\แขนซ้าย.png" />
+    <Content Include="picture\ซีกขวาบน.png" />
+    <Content Include="picture\ซีกชวาล่าง.png" />
+    <Content Include="picture\ซีกซ้ายบน.png" />
+    <Content Include="picture\ซีกซ้ายล่าง.png" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <EntityDeploy Include="Models\Model1.edmx">
@@ -249,8 +243,8 @@
     <Content Include="Views\Forgetpassword\EmailPage.cshtml" />
     <Content Include="Views\Forgetpassword\NextStep.cshtml" />
     <Content Include="Views\PMH\PMH_Create.cshtml" />
-    <Content Include="Views\Index\test.cshtml" />
     <Content Include="Views\PMH\PMHDetail.cshtml" />
+    <Content Include="Views\Index\test.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
