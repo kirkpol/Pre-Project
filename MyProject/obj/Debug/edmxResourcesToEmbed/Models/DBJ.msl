@@ -1,8 +1,16 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-  <EntityContainerMapping StorageEntityContainer="PredatabaseModel1StoreContainer" CdmEntityContainer="AzurePredatabaseEntities">
+  <EntityContainerMapping StorageEntityContainer="DBJ_DBModelStoreContainer" CdmEntityContainer="DBJ_DBEntities">
+    <EntitySetMapping Name="CauseTables">
+      <EntityTypeMapping TypeName="DBJ_DBModel.CauseTable">
+        <MappingFragment StoreEntitySet="CauseTable">
+          <ScalarProperty Name="ID_Cause" ColumnName="ID_Cause" />
+          <ScalarProperty Name="Cause" ColumnName="Cause" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
     <EntitySetMapping Name="Medical_history">
-      <EntityTypeMapping TypeName="PredatabaseModel1.Medical_history">
+      <EntityTypeMapping TypeName="DBJ_DBModel.Medical_history">
         <MappingFragment StoreEntitySet="Medical_history">
           <ScalarProperty Name="ID_PMH" ColumnName="ID_PMH" />
           <ScalarProperty Name="PMH" ColumnName="PMH" />
@@ -11,8 +19,16 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="MuscleTables">
+      <EntityTypeMapping TypeName="DBJ_DBModel.MuscleTable">
+        <MappingFragment StoreEntitySet="MuscleTable">
+          <ScalarProperty Name="ID_Muscle" ColumnName="ID_Muscle" />
+          <ScalarProperty Name="MUscle" ColumnName="MUscle" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
     <EntitySetMapping Name="Profiles">
-      <EntityTypeMapping TypeName="PredatabaseModel1.Profile">
+      <EntityTypeMapping TypeName="DBJ_DBModel.Profile">
         <MappingFragment StoreEntitySet="Profile">
           <ScalarProperty Name="Email" ColumnName="Email" />
           <ScalarProperty Name="Password" ColumnName="Password" />
@@ -25,45 +41,29 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="CauseTables">
-      <EntityTypeMapping TypeName="PredatabaseModel1.CauseTable">
-        <MappingFragment StoreEntitySet="CauseTable">
-          <ScalarProperty Name="Cause" ColumnName="Cause" />
-          <ScalarProperty Name="ID_Cause" ColumnName="ID_Cause" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="MuscleTables">
-      <EntityTypeMapping TypeName="PredatabaseModel1.MuscleTable">
-        <MappingFragment StoreEntitySet="MuscleTable">
-          <ScalarProperty Name="MUscle" ColumnName="MUscle" />
-          <ScalarProperty Name="ID_Muscle" ColumnName="ID_Muscle" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
     <EntitySetMapping Name="SuggestTables">
-      <EntityTypeMapping TypeName="PredatabaseModel1.SuggestTable">
+      <EntityTypeMapping TypeName="DBJ_DBModel.SuggestTable">
         <MappingFragment StoreEntitySet="SuggestTable">
-          <ScalarProperty Name="Suggest" ColumnName="Suggest" />
-          <ScalarProperty Name="Inflamed" ColumnName="Inflamed" />
           <ScalarProperty Name="ID_Inflamed" ColumnName="ID_Inflamed" />
+          <ScalarProperty Name="Inflamed" ColumnName="Inflamed" />
+          <ScalarProperty Name="Suggest" ColumnName="Suggest" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <AssociationSetMapping Name="Cause_Suggest" TypeName="PredatabaseModel1.Cause_Suggest" StoreEntitySet="Cause_Suggest">
+    <AssociationSetMapping Name="Cause_Suggest" TypeName="DBJ_DBModel.Cause_Suggest" StoreEntitySet="Cause_Suggest">
+      <EndProperty Name="CauseTable">
+        <ScalarProperty Name="ID_Cause" ColumnName="ID_Cause" />
+      </EndProperty>
       <EndProperty Name="SuggestTable">
         <ScalarProperty Name="ID_Inflamed" ColumnName="ID_Inflamed" />
       </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="Muscle_Cause" TypeName="DBJ_DBModel.Muscle_Cause" StoreEntitySet="Muscle_Cause">
       <EndProperty Name="CauseTable">
         <ScalarProperty Name="ID_Cause" ColumnName="ID_Cause" />
       </EndProperty>
-    </AssociationSetMapping>
-    <AssociationSetMapping Name="Muscle_Cause" TypeName="PredatabaseModel1.Muscle_Cause" StoreEntitySet="Muscle_Cause">
       <EndProperty Name="MuscleTable">
         <ScalarProperty Name="ID_Muscle" ColumnName="ID_Muscle" />
-      </EndProperty>
-      <EndProperty Name="CauseTable">
-        <ScalarProperty Name="ID_Cause" ColumnName="ID_Cause" />
       </EndProperty>
     </AssociationSetMapping>
   </EntityContainerMapping>

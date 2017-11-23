@@ -108,15 +108,15 @@
     <Content Include="Content\Emailpage.css" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
-    <Content Include="Models\Azure-model.Context.tt">
+    <Content Include="Models\DBJ.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>Azure-model.edmx</DependentUpon>
-      <LastGenOutput>Azure-model.Context.cs</LastGenOutput>
+      <DependentUpon>DBJ.edmx</DependentUpon>
+      <LastGenOutput>DBJ.Context.cs</LastGenOutput>
     </Content>
-    <Content Include="Models\Azure-model.tt">
+    <Content Include="Models\DBJ.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>Azure-model.edmx</DependentUpon>
-      <LastGenOutput>Azure-model.cs</LastGenOutput>
+      <DependentUpon>DBJ.edmx</DependentUpon>
+      <LastGenOutput>DBJ.cs</LastGenOutput>
     </Content>
     <Content Include="Models\Model1.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
@@ -133,16 +133,10 @@
     <Content Include="picture\map.png" />
     <Content Include="picture\Picture1.png" />
     <Content Include="picture\createPMH.png" />
-    <Content Include="picture\ด้านหน้า\มือขวา.png" />
-    <Content Include="picture\ด้านหน้า\มือซ้าย.png" />
-    <Content Include="picture\ด้านหน้า\หน้า.png" />
-    <Content Include="picture\ด้านหน้า\หน้าแบบตัด.png" />
-    <Content Include="picture\ด้านหน้า\เข่าขวา.png" />
-    <Content Include="picture\ด้านหน้า\เข่าซ้าย.png" />
-    <Content Include="picture\ด้านหน้า\เท้าขวา.png" />
-    <Content Include="picture\ด้านหน้า\เท้าซ้าย.png" />
-    <Content Include="picture\ด้านหน้า\แขนขวา.png" />
-    <Content Include="picture\ด้านหน้า\แขนซ้าย.png" />
+    <Content Include="picture\ซีกขวาบน.png" />
+    <Content Include="picture\ซีกชวาล่าง.png" />
+    <Content Include="picture\ซีกซ้ายบน.png" />
+    <Content Include="picture\ซีกซ้ายล่าง.png" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <EntityDeploy Include="Models\Model1.edmx">
@@ -152,12 +146,12 @@
     <Content Include="Models\Model1.edmx.diagram">
       <DependentUpon>Model1.edmx</DependentUpon>
     </Content>
-    <EntityDeploy Include="Models\Azure-model.edmx">
+    <EntityDeploy Include="Models\DBJ.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>Azure-model.Designer.cs</LastGenOutput>
+      <LastGenOutput>DBJ.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <Content Include="Models\Azure-model.edmx.diagram">
-      <DependentUpon>Azure-model.edmx</DependentUpon>
+    <Content Include="Models\DBJ.edmx.diagram">
+      <DependentUpon>DBJ.edmx</DependentUpon>
     </Content>
     <None Include="Properties\PublishProfiles\HelpMepicec - Web Deploy.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
@@ -170,7 +164,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
-    <Compile Include="Controllers\AzurePredatabaseEntities.cs" />
     <Compile Include="Controllers\ForgetpasswordController.cs" />
     <Compile Include="Controllers\IndexController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
@@ -180,26 +173,26 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\Azure-model.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Azure-model.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Azure-model.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Azure-model.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Azure-model.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Azure-model.edmx</DependentUpon>
-    </Compile>
     <Compile Include="Models\CauseTable.cs">
-      <DependentUpon>Azure-model.tt</DependentUpon>
+      <DependentUpon>DBJ.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DBJ.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DBJ.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DBJ.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DBJ.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DBJ.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DBJ.edmx</DependentUpon>
     </Compile>
     <Compile Include="Models\Medical_history.cs">
-      <DependentUpon>Azure-model.tt</DependentUpon>
+      <DependentUpon>DBJ.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Model1.Context.cs">
       <AutoGen>True</AutoGen>
@@ -217,13 +210,13 @@
       <DependentUpon>Model1.edmx</DependentUpon>
     </Compile>
     <Compile Include="Models\MuscleTable.cs">
-      <DependentUpon>Azure-model.tt</DependentUpon>
+      <DependentUpon>DBJ.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Profile.cs">
-      <DependentUpon>Azure-model.tt</DependentUpon>
+      <DependentUpon>DBJ.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\SuggestTable.cs">
-      <DependentUpon>Azure-model.tt</DependentUpon>
+      <DependentUpon>DBJ.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -250,8 +243,8 @@
     <Content Include="Views\Forgetpassword\EmailPage.cshtml" />
     <Content Include="Views\Forgetpassword\NextStep.cshtml" />
     <Content Include="Views\PMH\PMH_Create.cshtml" />
-    <Content Include="Views\Index\test.cshtml" />
     <Content Include="Views\PMH\PMHDetail.cshtml" />
+    <Content Include="Views\Index\test.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
