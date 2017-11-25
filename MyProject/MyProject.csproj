@@ -128,15 +128,25 @@
       <DependentUpon>Model1.edmx</DependentUpon>
       <LastGenOutput>Model1.cs</LastGenOutput>
     </Content>
+    <Content Include="picture\1-ขวา.png" />
+    <Content Include="picture\1-ซ้าย.png" />
+    <Content Include="picture\2-ขวา.png" />
+    <Content Include="picture\2-ซ้าย.png" />
+    <Content Include="picture\3-ขวา.png" />
+    <Content Include="picture\3-ซ้าย.png" />
+    <Content Include="picture\4-ขวา.png" />
+    <Content Include="picture\4-ซ้าย.png" />
+    <Content Include="picture\5-ขวา.png" />
+    <Content Include="picture\5-ซ้าย.png" />
+    <Content Include="picture\6-ขวา.png" />
+    <Content Include="picture\6-ซ้าย.png" />
+    <Content Include="picture\7-ขวา.png" />
+    <Content Include="picture\7-ซ้าย.png" />
     <Content Include="picture\Anatomydata.png" />
     <Content Include="picture\Foot.png" />
     <Content Include="picture\map.png" />
     <Content Include="picture\Picture1.png" />
     <Content Include="picture\createPMH.png" />
-    <Content Include="picture\ซีกขวาบน.png" />
-    <Content Include="picture\ซีกชวาล่าง.png" />
-    <Content Include="picture\ซีกซ้ายบน.png" />
-    <Content Include="picture\ซีกซ้ายล่าง.png" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <EntityDeploy Include="Models\Model1.edmx">
