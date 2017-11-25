@@ -4,6 +4,7 @@
     <EntitySetMapping Name="CauseTables">
       <EntityTypeMapping TypeName="DBJ_DBModel.CauseTable">
         <MappingFragment StoreEntitySet="CauseTable">
+          <ScalarProperty Name="ID_Muscle" ColumnName="ID_Muscle" />
           <ScalarProperty Name="ID_Cause" ColumnName="ID_Cause" />
           <ScalarProperty Name="Cause" ColumnName="Cause" />
         </MappingFragment>

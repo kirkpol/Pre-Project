@@ -8,6 +8,7 @@
     <Property Name="Cause" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
     <NavigationProperty Name="SuggestTables" Relationship="Self.Cause_Suggest" FromRole="CauseTable" ToRole="SuggestTable" />
     <NavigationProperty Name="MuscleTables" Relationship="Self.Muscle_Cause" FromRole="CauseTable" ToRole="MuscleTable" />
+    <Property Name="ID_Muscle" Type="Int32" />
   </EntityType>
   <EntityType Name="Medical_history">
     <Key>

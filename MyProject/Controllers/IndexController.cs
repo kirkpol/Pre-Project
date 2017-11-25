@@ -43,6 +43,14 @@ namespace MyProject.Controllers
 
         public ActionResult Anatomy()
         {
+            int i = 1;
+            var check_Muscle = db.MuscleTables.Find(i);
+            if(check_Muscle != null)
+            {
+                var check_cause = db.CauseTables.Where(a=>a.ID_Muscle.Equals(check_Muscle)).ToList();
+
+                return View();
+            }
             return View();
         }
 
