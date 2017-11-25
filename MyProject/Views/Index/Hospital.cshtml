@@ -32,6 +32,7 @@
             height: 32px;
             outline: none;
             box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+<<<<<<< HEAD
         }
         /*css กำหนดรูปแบบ ของ input สำหรับพิมพ์ค้นหา*/
         #pac-input {
@@ -43,6 +44,19 @@
             font-weight: 300;
             text-overflow: ellipsis;
         }
+=======
+        }
+        /*css กำหนดรูปแบบ ของ input สำหรับพิมพ์ค้นหา*/
+        #pac-input {
+            background-color: #fff;
+            padding: 0 11px 0 13px;
+            width: 60%;
+            font-family: Roboto;
+            font-size: 15px;
+            font-weight: 300;
+            text-overflow: ellipsis;
+        }
+>>>>>>> 6e57e026c4e96d30efdc186c36d3676e81b5b74a
             /*css กำหนดรูปแบบ ของ input สำหรับพิมพ์ค้นหา ขณะ focus*/
             #pac-input:focus {
                 width: 60%;
@@ -72,7 +86,11 @@
             GGM = new Object(google.maps); // เก็บตัวแปร google.maps Object ไว้ในตัวแปร GGM
             geocoder = new GGM.Geocoder(); // เก็บตัวแปร google.maps.Geocoder Object
             // กำหนดจุดเริ่มต้นของแผนที่
+<<<<<<< HEAD
+            var my_Latlng = new GGM.LatLng(13.7514967, 100.4904799);
+=======
             var my_Latlng = new GGM.LatLng(13.87041167703449, 100.5515666216774);
+>>>>>>> 6e57e026c4e96d30efdc186c36d3676e81b5b74a
             var my_mapTypeId = GGM.MapTypeId.ROADMAP; // กำหนดรูปแบบแผนที่ที่แสดง
             // กำหนด DOM object ที่จะเอาแผนที่ไปแสดง ที่นี้คือ div id=map_canvas
             var my_DivObj = $("#map_canvas")[0];
@@ -143,8 +161,37 @@
 
             });
 
+<<<<<<< HEAD
+            // เรียกใช้คุณสมบัติ ระบุตำแหน่ง ของ html 5 ถ้ามี
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(function (position) {
+                    var pos = new GGM.LatLng(position.coords.latitude, position.coords.longitude);
+                    var infowindow = new GGM.InfoWindow({
+                        map: map,
+                        position: pos,
+                        content: 'คุณอยู่ที่นี่.'
+                    });
+
+                    var my_Point = infowindow.getPosition();  // หาตำแหน่งของตัว marker เมื่อกดลากแล้วปล่อย
+                    map.panTo(my_Point);  // ให้แผนที่แสดงไปที่ตัว marker       
+                    $("#lat_value").val(my_Point.lat());  // เอาค่า latitude ตัว marker แสดงใน textbox id=lat_value
+                    $("#lon_value").val(my_Point.lng()); // เอาค่า longitude ตัว marker แสดงใน textbox id=lon_value 
+                    $("#zoom_value").val(map.getZoom()); // เอาขนาด zoom ของแผนที่แสดงใน textbox id=zoom_value              
+                    map.setCenter(pos);
+                }, function () {
+                    // คำสั่งทำงาน ถ้า ระบบระบุตำแหน่ง geolocation ผิดพลาด หรือไม่ทำงาน
+                });
+            } else {
+                // คำสั่งทำงาน ถ้า บราวเซอร์ ไม่สนับสนุน ระบุตำแหน่ง
+            }
+
 
         }
+
+=======
+
+        }
+>>>>>>> 6e57e026c4e96d30efdc186c36d3676e81b5b74a
         $(function () {
             // โหลด สคริป google map api เมื่อเว็บโหลดเรียบร้อยแล้ว
             // ค่าตัวแปร ที่ส่งไปในไฟล์ google map api
