@@ -1,4 +1,4 @@
-﻿@model MyProject.Models.CauseTable
+﻿@model IEnumerable<MyProject.Models.CauseTable>
 @{
     ViewBag.Title = "Anatomy";
 }
@@ -35,11 +35,11 @@
             <div class="group">
                 <label class="col-md-4" style="text-align:left">สาเหตุเกิดจาก</label>
                 <select name="muscle" class="col-sm-9" required>
+                    <option value="0">---NONE---</option>
                     @foreach (var item in Model)
                     {
-                        <option value="0">---NONE---</option>
-                        <option value="1"></option>
-                       
+                        <option value="1">@item.Cause</option>
+
                     }
                 </select>
             </div>

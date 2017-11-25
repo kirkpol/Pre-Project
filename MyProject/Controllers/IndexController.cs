@@ -8,7 +8,7 @@ using MyProject.Models;
 
 namespace MyProject.Controllers
 {
-    
+
 
     public class IndexController : Controller
     {
@@ -24,7 +24,7 @@ namespace MyProject.Controllers
         }
 
 
-        
+
         public ActionResult Logout()
         {
 
@@ -35,7 +35,7 @@ namespace MyProject.Controllers
             else if (HttpContext.Session != null)
             {
                 FormsAuthentication.SignOut();
-                HttpContext.Session.Abandon();    
+                HttpContext.Session.Abandon();
             }
             return RedirectToAction("Index", "Index");
 
@@ -44,14 +44,13 @@ namespace MyProject.Controllers
         public ActionResult Anatomy()
         {
             int i = 1;
-            var check_Muscle = db.MuscleTables.Find(i);
-            if(check_Muscle != null)
-            {
-                var check_cause = db.CauseTables.Where(a=>a.ID_Muscle.Equals(check_Muscle)).ToList();
+            var check_Muscle = db.MuscleTables.Where(a => a.ID_Muscle == i).FirstOrDefault<MuscleTable>();
 
-                return View();
-            }
-            return View();
+            var _cause = check_Muscle.CauseTables.ToList();
+            
+            return View(_cause.ToList());
+
+
         }
 
         public ActionResult Suggest()

@@ -232,7 +232,6 @@
     <Content Include="Scripts\jquery-1.10.2.min.map" />
     <Content Include="Views\Index\Anatomy.cshtml" />
     <Content Include="Views\Index\Suggest.cshtml" />
-    <Content Include="Views\Index\Hospital.cshtml" />
     <Content Include="Views\Registor\Registor.cshtml" />
     <Content Include="Views\Login\Login.cshtml" />
     <Content Include="Views\Shared\Layout_After_login.cshtml" />
@@ -245,6 +244,7 @@
     <Content Include="Views\PMH\PMH_Create.cshtml" />
     <Content Include="Views\PMH\PMHDetail.cshtml" />
     <Content Include="Views\Index\test.cshtml" />
+    <Content Include="Views\Index\Hospital.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
