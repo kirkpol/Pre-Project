@@ -13,7 +13,7 @@ namespace MyProject.Controllers
     public class LoginController : Controller
     {
         private DBJ_DBEntities db = new DBJ_DBEntities();
-       // private PredatabaseEntities db = new PredatabaseEntities();
+      // private PredatabaseEntities db = new PredatabaseEntities();
 
 
         public ActionResult Login()

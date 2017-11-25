@@ -16,9 +16,9 @@
 
                     <div class="col-md-12 personal-info">
                         
+                        @{int i = 1; }
                         @foreach (var item in Model)
                         {
-                            int i = 1;
                             <div class="form-group">
                                 
                                 <div class="col-md-8" style="text-align:left">
@@ -26,8 +26,10 @@
                                    <label style="margin-right:10px" >@i.</label> 
                                    <label onclick="location.href='@Url.Action("PMHDetail", "PMH",new { id = item.ID_PMH })';">@item.Symtpomatic</label>
                                         </p>
+                                    
                                     <br />
                                 </div>
+                                
                             </div>
                             i++;
                         }
