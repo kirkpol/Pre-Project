@@ -18,69 +18,264 @@ namespace MyProject.Controllers
 
         public ActionResult L1() //ไหลซ้าย
         {
-            return View();
+            string test = Request.Form["muscle"];
+
+            int i = 10;
+
+
+
+            if (test != null)
+            {
+                return RedirectToAction("Suggest", "HelpMeFront", new { test });
+            }
+
+            var check_Muscle = db.MuscleTables.Where(a => a.ID_Muscle == i).FirstOrDefault<MuscleTable>();
+
+            var _cause = check_Muscle.CauseTables.ToList();
+
+            return View(_cause.ToList());
         }
 
         public ActionResult L2() //ข้อศอกซ้าย
         {
-            return View();
+            string test = Request.Form["muscle"];
+
+            int i = 12;
+
+
+
+            if (test != null)
+            {
+                return RedirectToAction("Suggest", "HelpMeFront", new { test });
+            }
+
+            var check_Muscle = db.MuscleTables.Where(a => a.ID_Muscle == i).FirstOrDefault<MuscleTable>();
+
+            var _cause = check_Muscle.CauseTables.ToList();
+
+            return View(_cause.ToList());
         }
 
         public ActionResult L3()//ข้อพับหัวเข่าซ้าย
         {
-            return View();
+            string test = Request.Form["muscle"];
+
+            int i = 16;
+
+
+
+            if (test != null)
+            {
+                return RedirectToAction("Suggest", "HelpMeFront", new { test });
+            }
+
+            var check_Muscle = db.MuscleTables.Where(a => a.ID_Muscle == i).FirstOrDefault<MuscleTable>();
+
+            var _cause = check_Muscle.CauseTables.ToList();
+
+            return View(_cause.ToList());
         }
 
         public ActionResult L4()//น่องซ้าย
         {
-            return View();
+            string test = Request.Form["muscle"];
+
+            int i = 18;
+
+
+
+            if (test != null)
+            {
+                return RedirectToAction("Suggest", "HelpMeFront", new { test });
+            }
+
+            var check_Muscle = db.MuscleTables.Where(a => a.ID_Muscle == i).FirstOrDefault<MuscleTable>();
+
+            var _cause = check_Muscle.CauseTables.ToList();
+
+            return View(_cause.ToList());
         }
 
         public ActionResult L5()//เท้าหลัง
         {
-            return View();
+            string test = Request.Form["muscle"];
+
+            int i = 20;
+
+
+
+            if (test != null)
+            {
+                return RedirectToAction("Suggest", "HelpMeFront", new { test });
+            }
+
+            var check_Muscle = db.MuscleTables.Where(a => a.ID_Muscle == i).FirstOrDefault<MuscleTable>();
+
+            var _cause = check_Muscle.CauseTables.ToList();
+
+            return View(_cause.ToList());
         }
 
         public ActionResult R1()//ไหลขวา
         {
-            return View();
+            string test = Request.Form["muscle"];
+
+            int i = 11;
+
+
+
+            if (test != null)
+            {
+                return RedirectToAction("Suggest", "HelpMeFront", new { test });
+            }
+
+            var check_Muscle = db.MuscleTables.Where(a => a.ID_Muscle == i).FirstOrDefault<MuscleTable>();
+
+            var _cause = check_Muscle.CauseTables.ToList();
+
+            return View(_cause.ToList());
         }
 
-        public ActionResult R2()//ข้อศอกซ้าย
+        public ActionResult R2()//ข้อศอกขวา
         {
-            return View();
+            string test = Request.Form["muscle"];
+
+            int i = 13;
+
+
+
+            if (test != null)
+            {
+                return RedirectToAction("Suggest", "HelpMeFront", new { test });
+            }
+
+            var check_Muscle = db.MuscleTables.Where(a => a.ID_Muscle == i).FirstOrDefault<MuscleTable>();
+
+            var _cause = check_Muscle.CauseTables.ToList();
+
+            return View(_cause.ToList());
         }
 
-        public ActionResult R3()//น่องซ้าย
+        public ActionResult R3()//ข้อพับขวา
         {
-            return View();
+            string test = Request.Form["muscle"];
+
+            int i = 17;
+
+
+
+            if (test != null)
+            {
+                return RedirectToAction("Suggest", "HelpMeFront", new { test });
+            }
+
+            var check_Muscle = db.MuscleTables.Where(a => a.ID_Muscle == i).FirstOrDefault<MuscleTable>();
+
+            var _cause = check_Muscle.CauseTables.ToList();
+
+            return View(_cause.ToList());
         }
 
-        public ActionResult R4()//เท้าหลัง
+        public ActionResult R4()//น่องขวา
         {
-            return View();
+            string test = Request.Form["muscle"];
+
+            int i = 19;
+
+
+
+            if (test != null)
+            {
+                return RedirectToAction("Suggest", "HelpMeFront", new { test });
+            }
+
+            var check_Muscle = db.MuscleTables.Where(a => a.ID_Muscle == i).FirstOrDefault<MuscleTable>();
+
+            var _cause = check_Muscle.CauseTables.ToList();
+
+            return View(_cause.ToList());
         }
 
-        public ActionResult R5()//เท้าหลัง
+        public ActionResult R5()//ข้อเท้าหลังขวา
         {
-            return View();
+            string test = Request.Form["muscle"];
+
+            int i = 21;
+
+
+
+            if (test != null)
+            {
+                return RedirectToAction("Suggest", "HelpMeFront", new { test });
+            }
+
+            var check_Muscle = db.MuscleTables.Where(a => a.ID_Muscle == i).FirstOrDefault<MuscleTable>();
+
+            var _cause = check_Muscle.CauseTables.ToList();
+
+            return View(_cause.ToList());
         }
 
         public ActionResult C1()//ต้นคอ
         {
-            return View();
+            string test = Request.Form["muscle"];
+
+            int i = 9;
+
+
+
+            if (test != null)
+            {
+                return RedirectToAction("Suggest", "HelpMeFront", new { test });
+            }
+
+            var check_Muscle = db.MuscleTables.Where(a => a.ID_Muscle == i).FirstOrDefault<MuscleTable>();
+
+            var _cause = check_Muscle.CauseTables.ToList();
+
+            return View(_cause.ToList());
         }
 
 
         public ActionResult C2()//หลังส่วนล่าง
         {
-            return View();
+            string test = Request.Form["muscle"];
+
+            int i = 14;
+
+
+
+            if (test != null)
+            {
+                return RedirectToAction("Suggest", "HelpMeFront", new { test });
+            }
+
+            var check_Muscle = db.MuscleTables.Where(a => a.ID_Muscle == i).FirstOrDefault<MuscleTable>();
+
+            var _cause = check_Muscle.CauseTables.ToList();
+
+            return View(_cause.ToList());
         }
 
 
         public ActionResult C3()//สะโพก
         {
-            return View();
+            string test = Request.Form["muscle"];
+
+            int i = 15;
+
+
+
+            if (test != null)
+            {
+                return RedirectToAction("Suggest", "HelpMeFront", new { test });
+            }
+
+            var check_Muscle = db.MuscleTables.Where(a => a.ID_Muscle == i).FirstOrDefault<MuscleTable>();
+
+            var _cause = check_Muscle.CauseTables.ToList();
+
+            return View(_cause.ToList());
         }
 
         public ActionResult suggest(int test)
