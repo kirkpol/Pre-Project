@@ -13,12 +13,22 @@ namespace MyProject.Controllers
         private DBJ_DBEntities db = new DBJ_DBEntities();
         //private PredatabaseEntities db = new PredatabaseEntities();
         // GET: PMH
-        public ActionResult PMH_Show()
+        public ActionResult PMH_Show(int? id)
         {
+
+            if (id != null)
+            {
+                Medical_history MH = db.Medical_history.Find(id);
+                db.Medical_history.Remove(MH);
+                db.SaveChanges();
+
+            }
             var email = this.Session["Email"];
             string email_convert = Convert.ToString(email);
 
             var check = db.Medical_history.Where(a => a.Email.Equals(email_convert)).ToList();
+
+
 
             return View(check.ToList());
         }
@@ -64,12 +74,12 @@ namespace MyProject.Controllers
                         throw new DbEntityValidationException(exceptionMessage, ex.EntityValidationErrors);
                     }
                 }
-               
+
             }
-            return RedirectToAction("PMH_Create", "PMH");
+            return RedirectToAction("PMH_Show", "PMH");
         }
 
-        public ActionResult PMHDetail(int? id )
+        public ActionResult PMHDetail(int? id)
         {
 
             Medical_history PHM = db.Medical_history.Find(id);
@@ -79,5 +89,7 @@ namespace MyProject.Controllers
             }
             return View(PHM);
         }
+
+        
     }
 }

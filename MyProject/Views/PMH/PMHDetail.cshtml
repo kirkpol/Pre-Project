@@ -1,8 +1,5 @@
 ﻿@model MyProject.Models.Medical_history
 
-@{
-    ViewBag.Title = "Index";
-}
 
 <html>
 
@@ -11,7 +8,7 @@
     <div style="text-align:center">
         <div class="container">
             <br />
-            <h1>@Model.Symtpomatic</h1>
+            <p style="font-size:48px ;color:darkturquoise">@Model.Symtpomatic</p>
         </div>
         <div class="row">
 
@@ -21,19 +18,28 @@
 
                 <div class="form-group">
                     <div class="col-md-8" style="text-align:left">
-                        <p style="font-size: 20px">
-                            <label style="margin-right:10px">@Model.PMH</label>
+                        <p style="font-size: 30px">
+                            <label style="margin-right:10px;color:darkturquoise">@Model.PMH</label>
                         </p>
+
                         <br />
                     </div>
                 </div>
 
                 <div class="form-group">
-                    <div class="col-md-4">
+                    <div class="col-md-12" style="text-align:left">
+
+                        <span class="pull-right" style="margin:5px 10px 0px 0px">
+                            <p style="font-size:16px"> @Html.ActionLink("ลบประวัติการรักษานี่", "PMH_Show", new { id = Model.ID_PMH }, new { onclick = "return confirm('Are you sure want to deleted?')", style = "color: white" })</p>
+
+                        </span>
+
+
                     </div>
-                    <div class="col-md-8" style="text-align:left">
-                        
-                        <input class="btn btn-default" type="button" value="ย้อนกลับ" onclick="location.href='@Url.Action("PMH_Show", "PMH")';" />
+                    <div class="col-md-8" style="text-align:right">
+                        <span class="pull-left" style="margin:5px 10px 0px 0px">
+                            <p style="font-size:16px">@Html.ActionLink("ย้อนกลับ", "PMH_Show", new { }, new { style = "color:white" })</p>
+                        </span>
                     </div>
                 </div>
 

@@ -4,12 +4,12 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewBag.Title - My ASP.NET Application</title>
+    <title>@ViewBag.Title Help Me Piece</title>
     <link href="~/Content/Site.css" rel="stylesheet" type="text/css" />
     <link href="~/Content/bootstrap.min.css" rel="stylesheet" type="text/css" />
     <script src="~/Scripts/modernizr-2.6.2.js"></script>
 </head>
-<body background="/Picture/Background/bg.jpg">
+<body background="/picture/Background/bg.jpg">
 
 
 
@@ -21,7 +21,7 @@
                     <span class="icon-bar" style="background-color:lightseagreen"></span>
                     <span class="icon-bar" style="background-color:lightseagreen"></span>
                 </button>
-                <a class="navbar-brand" onclick="location.href='@Url.Action("Index", "Index")';">
+                <a class="navbar-brand" style="font-family:'Brush Script MT';font-size:25px" onclick="location.href='@Url.Action("Index", "Index")';">
 
                     Help Me Piece
                 </a>
@@ -44,7 +44,7 @@
                     <ul class="nav navbar-nav navbar-right" style="color:#ffffff">
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                                <b>
+                                <b >
                                     <span class="glyphicon glyphicon-user"></span>
                                     คุณ. @HttpContext.Current.Session["Firstname"]<br />
 

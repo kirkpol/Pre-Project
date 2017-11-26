@@ -1,7 +1,4 @@
 ﻿@model IEnumerable<MyProject.Models.CauseTable>
-@{
-    ViewBag.Title = "Anatomy";
-}
 
 
 <head>
@@ -15,15 +12,15 @@
 
 
 
-
+        <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
 
         <div class="col-md-12">
             <center>
                 <div class="row">
                     <div class="group">
-                        <center><h1>ข้อมือด้านขวา</h1> </center>
+                        <center><p style="font-size: 60px ;color:darkturquoise">ข้อมือด้านขวา</p> </center>
 
-                        <label class="col-md-5" style="text-align:right;font-size:16px">สาเหตุเกิดจาก</label>
+                        <label class="col-md-5" style="text-align:right;font-size:18px;color:darkturquoise">สาเหตุเกิดจาก</label>
                         <select name="muscle" class="col-md-7" required>
                             <option value="0">---NONE---</option>
                             @foreach (var item in Model)
@@ -34,6 +31,7 @@
                         </select>
                     </div>
                 </div>
+                <br />
                 <button type="submit" class="btn btn-default">ตรวจสอบอาการ</button>
             </center>
         </div>

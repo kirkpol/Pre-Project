@@ -318,8 +318,6 @@
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Index\Index.cshtml" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
-    <Content Include="Views\Index\Anatomy.cshtml" />
-    <Content Include="Views\Index\Suggest.cshtml" />
     <Content Include="Views\Registor\Registor.cshtml" />
     <Content Include="Views\Login\Login.cshtml" />
     <Content Include="Views\Shared\Layout_After_login.cshtml" />

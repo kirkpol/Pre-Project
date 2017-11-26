@@ -1,9 +1,6 @@
 ﻿@model MyProject.Models.Profile
 @using System.Globalization;
 @using System.Web.Mvc;
-@{
-    ViewBag.Title = "Index";
-}
 
 <html>
 @using (Html.BeginForm())
@@ -19,7 +16,7 @@
 
                         <div class="form-group">
                             <div class="col-md-4" style="text-align:left">
-                                <label style="color:darkblue;font-size:24px;font-family:'Browallia New'">อีเมลล์ : </label>
+                                <label style="color:darkturquoise;font-size:24px;font-family:'Browallia New'">อีเมลล์ : </label>
                             </div>
                             <div class="col-md-8" style="text-align:left">
                                 <input name="Email_update" class="form-control" type="text" value="@Model.Email" readonly>
@@ -31,7 +28,7 @@
 
                         <div class="form-group">
                             <div class="col-md-4" style="text-align:left">
-                                <label style="color:darkblue;font-size:24px;font-family:'Browallia New'">ชื่อจริง : </label>
+                                <label style="color:darkturquoise;font-size:24px;font-family:'Browallia New'">ชื่อจริง : </label>
                             </div>
 
                             <div class="col-md-8" style="text-align:left">
@@ -42,7 +39,7 @@
 
                         <div class="form-group">
                             <div class="col-md-4" style="text-align:left">
-                                <label style="color:darkblue;font-size:24px;font-family:'Browallia New'">นามสกุล : </label>
+                                <label style="color:darkturquoise;font-size:24px;font-family:'Browallia New'">นามสกุล : </label>
                             </div>
                             <div class="col-md-8" style="text-align:left">
                                 <input name="Lastname_update" class="form-control" type="text" value="@Model.Lastname">
@@ -55,7 +52,7 @@
                             string s = Model.Birthday.ToString("MM/dd/yyyy", CultureInfo.InvariantCulture);
                             <div class="form-group">
                                 <div class="col-md-4" style="text-align:left">
-                                    <label style="color:darkblue;font-size:24px;font-family:'Browallia New'">วัดเกิด : </label>
+                                    <label style="color:darkturquoise;font-size:24px;font-family:'Browallia New'">วัดเกิด : </label>
                                 </div>
                                 <div class="col-md-8" style="text-align:left">
                                     <input name="Birthday_update" class="form-control" type="datetime" value="@s">
@@ -67,7 +64,7 @@
 
                         <div class="form-group">
                             <div class="col-md-4" style="text-align:left">
-                                <label style="color:darkblue;font-size:24px;font-family:'Browallia New'">โรคประจำตัว : </label>
+                                <label style="color:darkturquoise;font-size:24px;font-family:'Browallia New'">โรคประจำตัว : </label>
                             </div>
                             <div class="col-md-8" style="text-align:left">
                                 <input name="Congenital" class="form-control" type="text" value="@Model.Congenital_disease">
@@ -77,7 +74,7 @@
 
                         <div class="form-group">
                             <div class="col-md-4" style="text-align:left">
-                                <label style="color:darkblue;font-size:24px;font-family:'Browallia New'">เพศ : </label>
+                                <label style="color:darkturquoise;font-size:24px;font-family:'Browallia New'">เพศ : </label>
                             </div>
                             <div class="col-md-8" style="text-align:left">
                                 <input name="Sex_update" class="form-control" type="text" value="@Model.Sex" readonly>
@@ -87,7 +84,7 @@
 
                         <div class="form-group">
                             <div class="col-md-4" style="text-align:left">
-                                <label style="color:darkblue;font-size:24px;font-family:'Browallia New'">เบอร์ติดต่อ : </label>
+                                <label style="color:darkturquoise;font-size:24px;font-family:'Browallia New'">เบอร์ติดต่อ : </label>
                             </div>
                             <div class="col-md-8" style="text-align:left">
                                 <input name="Contact_update" class="form-control" maxlength="10" type="text" value="@Model.Contact">

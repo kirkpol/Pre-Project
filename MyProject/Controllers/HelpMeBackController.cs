@@ -26,7 +26,7 @@ namespace MyProject.Controllers
 
             if (test != null)
             {
-                return RedirectToAction("Suggest", "HelpMeFront", new { test });
+                return RedirectToAction("Suggest", "HelpMeBack", new { test });
             }
 
             var check_Muscle = db.MuscleTables.Where(a => a.ID_Muscle == i).FirstOrDefault<MuscleTable>();
@@ -46,7 +46,7 @@ namespace MyProject.Controllers
 
             if (test != null)
             {
-                return RedirectToAction("Suggest", "HelpMeFront", new { test });
+                return RedirectToAction("Suggest", "HelpMeBack", new { test });
             }
 
             var check_Muscle = db.MuscleTables.Where(a => a.ID_Muscle == i).FirstOrDefault<MuscleTable>();
@@ -66,7 +66,7 @@ namespace MyProject.Controllers
 
             if (test != null)
             {
-                return RedirectToAction("Suggest", "HelpMeFront", new { test });
+                return RedirectToAction("Suggest", "HelpMeBack", new { test });
             }
 
             var check_Muscle = db.MuscleTables.Where(a => a.ID_Muscle == i).FirstOrDefault<MuscleTable>();
@@ -86,7 +86,7 @@ namespace MyProject.Controllers
 
             if (test != null)
             {
-                return RedirectToAction("Suggest", "HelpMeFront", new { test });
+                return RedirectToAction("Suggest", "HelpMeBack", new { test });
             }
 
             var check_Muscle = db.MuscleTables.Where(a => a.ID_Muscle == i).FirstOrDefault<MuscleTable>();
@@ -106,7 +106,7 @@ namespace MyProject.Controllers
 
             if (test != null)
             {
-                return RedirectToAction("Suggest", "HelpMeFront", new { test });
+                return RedirectToAction("Suggest", "HelpMeBack", new { test });
             }
 
             var check_Muscle = db.MuscleTables.Where(a => a.ID_Muscle == i).FirstOrDefault<MuscleTable>();
@@ -126,7 +126,7 @@ namespace MyProject.Controllers
 
             if (test != null)
             {
-                return RedirectToAction("Suggest", "HelpMeFront", new { test });
+                return RedirectToAction("Suggest", "HelpMeBack", new { test });
             }
 
             var check_Muscle = db.MuscleTables.Where(a => a.ID_Muscle == i).FirstOrDefault<MuscleTable>();
@@ -146,7 +146,7 @@ namespace MyProject.Controllers
 
             if (test != null)
             {
-                return RedirectToAction("Suggest", "HelpMeFront", new { test });
+                return RedirectToAction("Suggest", "HelpMeBack", new { test });
             }
 
             var check_Muscle = db.MuscleTables.Where(a => a.ID_Muscle == i).FirstOrDefault<MuscleTable>();
@@ -166,7 +166,7 @@ namespace MyProject.Controllers
 
             if (test != null)
             {
-                return RedirectToAction("Suggest", "HelpMeFront", new { test });
+                return RedirectToAction("Suggest", "HelpMeBack", new { test });
             }
 
             var check_Muscle = db.MuscleTables.Where(a => a.ID_Muscle == i).FirstOrDefault<MuscleTable>();
@@ -186,7 +186,7 @@ namespace MyProject.Controllers
 
             if (test != null)
             {
-                return RedirectToAction("Suggest", "HelpMeFront", new { test });
+                return RedirectToAction("Suggest", "HelpMeBack", new { test });
             }
 
             var check_Muscle = db.MuscleTables.Where(a => a.ID_Muscle == i).FirstOrDefault<MuscleTable>();
@@ -206,7 +206,7 @@ namespace MyProject.Controllers
 
             if (test != null)
             {
-                return RedirectToAction("Suggest", "HelpMeFront", new { test });
+                return RedirectToAction("Suggest", "HelpMeBack", new { test });
             }
 
             var check_Muscle = db.MuscleTables.Where(a => a.ID_Muscle == i).FirstOrDefault<MuscleTable>();
@@ -226,7 +226,7 @@ namespace MyProject.Controllers
 
             if (test != null)
             {
-                return RedirectToAction("Suggest", "HelpMeFront", new { test });
+                return RedirectToAction("Suggest", "HelpMeBack", new { test });
             }
 
             var check_Muscle = db.MuscleTables.Where(a => a.ID_Muscle == i).FirstOrDefault<MuscleTable>();
@@ -247,7 +247,7 @@ namespace MyProject.Controllers
 
             if (test != null)
             {
-                return RedirectToAction("Suggest", "HelpMeFront", new { test });
+                return RedirectToAction("Suggest", "HelpMeBack", new { test });
             }
 
             var check_Muscle = db.MuscleTables.Where(a => a.ID_Muscle == i).FirstOrDefault<MuscleTable>();
@@ -268,7 +268,7 @@ namespace MyProject.Controllers
 
             if (test != null)
             {
-                return RedirectToAction("Suggest", "HelpMeFront", new { test });
+                return RedirectToAction("Suggest", "HelpMeBack", new { test });
             }
 
             var check_Muscle = db.MuscleTables.Where(a => a.ID_Muscle == i).FirstOrDefault<MuscleTable>();
@@ -283,7 +283,7 @@ namespace MyProject.Controllers
             if (test == 0)
             {
 
-                return RedirectToAction("Ghost", "HelpMeFront");
+                return RedirectToAction("Ghost", "HelpMeBack");
             }
             var check = db.CauseTables.Find(test);
 

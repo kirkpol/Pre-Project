@@ -1,7 +1,5 @@
 ﻿@model MyProject.Models.SuggestTable
-@{
-    ViewBag.Title = "Symptomatic";
-}
+
 <head>
     @if (ViewBag.Error != null)
     {
@@ -21,8 +19,8 @@
     <br /><br /><br /><br />
     <div class="col-md-12">
         <center>
-            <label style="font-size:25px ;color:white">อาการที่คาดว่าจะเป็น</label><br /><br />
-            <label>@Model.Inflamed</label>
+            <label style="font-size:40px ;color:white">อาการที่คาดว่าจะเป็น</label><br /><br />
+            <label style="font-size:25px ;color:darkturquoise">@Model.Inflamed</label>
         </center>
     </div>
 
@@ -30,14 +28,15 @@
 
     <div class="col-md-12">
         <center>
-            <label style="font-size:25px ;color:white">ปฐมพยาบาลเบื้องต้น</label><br /><br />
-            <label>@Model.Suggest</label>
+            <label style="font-size:40px ;color:white">ปฐมพยาบาลเบื้องต้น</label><br /><br />
+            <label style="font-size:25px ;color:darkturquoise">@Model.Suggest</label>
         </center>
     </div>
 
     <div class="row" style="text-align:center;padding-top:50px">
 
-        <button type="submit" onclick="location.href='@Url.Action("Index", "Index")';" style="background-color:black;color:white ; border-radius:30px ; border:solid #FFffff;font-weight:bolder;width:100px;height:25px;">ตรวจสอบ</button>
+        
+        <input class="btn btn-default" type="submit" value="หน้าหลัก" onclick="location.href='@Url.Action("Index", "Index")';" />
     </div>
 
 
