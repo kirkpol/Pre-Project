@@ -143,6 +143,9 @@
     <Content Include="picture\7-ขวา.png" />
     <Content Include="picture\7-ซ้าย.png" />
     <Content Include="picture\Anatomydata.png" />
+    <Content Include="picture\Background\BackGround.jpg" />
+    <Content Include="picture\Background\bg.jpg" />
+    <Content Include="picture\Background\heartbeat.jpg" />
     <Content Include="picture\Foot.png" />
     <Content Include="picture\map.png" />
     <Content Include="picture\Picture1.png" />
