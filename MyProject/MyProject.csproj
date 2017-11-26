@@ -340,6 +340,23 @@
     <Content Include="Views\HelpMeFront\R3.cshtml" />
     <Content Include="Views\HelpMeFront\R4.cshtml" />
     <Content Include="Views\HelpMeFront\FrontV2.cshtml" />
+    <Content Include="Views\HelpMeFront\suggest.cshtml" />
+    <Content Include="Views\HelpMeFront\Ghost.cshtml" />
+    <Content Include="Views\HelpMeBack\L1.cshtml" />
+    <Content Include="Views\HelpMeBack\L2.cshtml" />
+    <Content Include="Views\HelpMeBack\L3.cshtml" />
+    <Content Include="Views\HelpMeBack\L4.cshtml" />
+    <Content Include="Views\HelpMeBack\L5.cshtml" />
+    <Content Include="Views\HelpMeBack\R1.cshtml" />
+    <Content Include="Views\HelpMeBack\R2.cshtml" />
+    <Content Include="Views\HelpMeBack\R3.cshtml" />
+    <Content Include="Views\HelpMeBack\R4.cshtml" />
+    <Content Include="Views\HelpMeBack\R5.cshtml" />
+    <Content Include="Views\HelpMeBack\C1.cshtml" />
+    <Content Include="Views\HelpMeBack\C2.cshtml" />
+    <Content Include="Views\HelpMeBack\C3.cshtml" />
+    <Content Include="Views\HelpMeBack\Ghost.cshtml" />
+    <Content Include="Views\HelpMeBack\suggest.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

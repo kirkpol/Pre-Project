@@ -69,8 +69,18 @@ namespace MyProject.Controllers
 
         public ActionResult Suggest(int test)
         {
-            int t = test;
-            return View();
+            var check = db.CauseTables.Find(test);
+
+            int keep = check.ID_Cause;
+
+            var _check = db.SuggestTables.Where(a => a.ID_Cause == keep).FirstOrDefault<SuggestTable>();
+            //var _check = check.SuggestTables.Where(a => a.CauseTables.Equals(keep)).FirstOrDefault();
+
+
+           
+
+
+            return View(_check);
         }
 
         public ActionResult Hospital()

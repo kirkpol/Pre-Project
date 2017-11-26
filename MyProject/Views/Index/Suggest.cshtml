@@ -1,4 +1,4 @@
-﻿
+﻿@model MyProject.Models.SuggestTable
 @{
     ViewBag.Title = "Symptomatic";
 }
@@ -9,7 +9,7 @@
    <div class="col-md-12">
        <center>
            <label style="font-size:25px ;color:white">อาการที่คาดว่าจะเป็น</label><br /><br />
-           <textarea rows="4" cols="80" readonly style="text-align:center">เอ็นกระดูกช้ำ ฉีกขาด</textarea>
+            <label>@Model.Inflamed</label>
        </center>
     </div>
 
@@ -18,7 +18,7 @@
     <div class="col-md-12">
         <center>
             <label style="font-size:25px ;color:white">ปฐมพยาบาลเบื้องต้น</label><br /><br />
-            <textarea rows="4" cols="80" readonly>พักการใช้งาน โดยการใชไม้เท้าพยุงเดิน พันผ้ายืดประคองเท้าเพื่อป้องกันการบาดเจ็บซำ ประคบด้วยความเย็นหากมีอาการ บวม เมื่ออาการบวมหายแล้วประคบด้วยความร้อน</textarea>
+           <label>@Model.Suggest</label>
         </center>
     </div>
 

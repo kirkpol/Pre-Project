@@ -23,6 +23,7 @@ namespace MyProject.Models
         public int ID_Inflamed { get; set; }
         public string Inflamed { get; set; }
         public string Suggest { get; set; }
+        public Nullable<int> ID_Cause { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<CauseTable> CauseTables { get; set; }

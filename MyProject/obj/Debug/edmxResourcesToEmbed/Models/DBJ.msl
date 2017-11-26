@@ -45,6 +45,7 @@
     <EntitySetMapping Name="SuggestTables">
       <EntityTypeMapping TypeName="DBJ_DBModel.SuggestTable">
         <MappingFragment StoreEntitySet="SuggestTable">
+          <ScalarProperty Name="ID_Cause" ColumnName="ID_Cause" />
           <ScalarProperty Name="ID_Inflamed" ColumnName="ID_Inflamed" />
           <ScalarProperty Name="Inflamed" ColumnName="Inflamed" />
           <ScalarProperty Name="Suggest" ColumnName="Suggest" />

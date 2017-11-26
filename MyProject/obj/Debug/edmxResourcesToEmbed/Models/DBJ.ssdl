@@ -58,6 +58,7 @@
       <PropertyRef Name="ID_Inflamed" />
     </Key>
     <Property Name="ID_Inflamed" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ID_Cause" Type="int" />
     <Property Name="Inflamed" Type="text" Nullable="false" />
     <Property Name="Suggest" Type="text" Nullable="false" />
   </EntityType>

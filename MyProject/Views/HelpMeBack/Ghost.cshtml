@@ -1,0 +1,18 @@
+﻿<html>
+<body>
+
+    @if (ViewBag.Error != null)
+    {
+
+        <script>
+                                alert("กรุณาเลือกสาเหตุ");
+
+                                    location.href = '@Url.Action("Front", "HelpMeFront")';
+
+
+        </script>
+
+    }
+</body>
+</html>
+

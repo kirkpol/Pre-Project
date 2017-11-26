@@ -63,6 +63,7 @@
             <PropertyRef Name="ID_Inflamed" />
           </Key>
           <Property Name="ID_Inflamed" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ID_Cause" Type="int" />
           <Property Name="Inflamed" Type="text" Nullable="false" />
           <Property Name="Suggest" Type="text" Nullable="false" />
         </EntityType>
@@ -209,6 +210,7 @@
           <Property Name="Inflamed" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="Suggest" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
           <NavigationProperty Name="CauseTables" Relationship="Self.Cause_Suggest" FromRole="SuggestTable" ToRole="CauseTable" />
+          <Property Name="ID_Cause" Type="Int32" />
         </EntityType>
         <Association Name="FK_Medical_history_Profile">
           <End Role="Profile" Type="Self.Profile" Multiplicity="1" />
@@ -299,6 +301,7 @@
           <EntitySetMapping Name="SuggestTables">
             <EntityTypeMapping TypeName="DBJ_DBModel.SuggestTable">
               <MappingFragment StoreEntitySet="SuggestTable">
+                <ScalarProperty Name="ID_Cause" ColumnName="ID_Cause" />
                 <ScalarProperty Name="ID_Inflamed" ColumnName="ID_Inflamed" />
                 <ScalarProperty Name="Inflamed" ColumnName="Inflamed" />
                 <ScalarProperty Name="Suggest" ColumnName="Suggest" />
