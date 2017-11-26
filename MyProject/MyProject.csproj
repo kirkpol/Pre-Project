@@ -219,6 +219,9 @@
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\ForgetpasswordController.cs" />
+    <Compile Include="Controllers\HelpMeBackController.cs" />
+    <Compile Include="Controllers\HelpMeFrontController.cs" />
+    <Compile Include="Controllers\HospitalController.cs" />
     <Compile Include="Controllers\IndexController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\PMHController.cs" />
@@ -297,9 +300,17 @@
     <Content Include="Views\Forgetpassword\NextStep.cshtml" />
     <Content Include="Views\PMH\PMH_Create.cshtml" />
     <Content Include="Views\PMH\PMHDetail.cshtml" />
-    <Content Include="Views\Index\test.cshtml" />
-    <Content Include="Views\Index\Hospital.cshtml" />
-    <Content Include="Views\Index\test2.cshtml" />
+    <Content Include="Views\HelpMeFront\Front.cshtml" />
+    <Content Include="Views\Hospital\Hospital.cshtml" />
+    <Content Include="Views\HelpMeBack\Back.cshtml" />
+    <Content Include="Views\HelpMeFront\L1.cshtml" />
+    <Content Include="Views\HelpMeFront\L2.cshtml" />
+    <Content Include="Views\HelpMeFront\L3.cshtml" />
+    <Content Include="Views\HelpMeFront\L4.cshtml" />
+    <Content Include="Views\HelpMeFront\R1.cshtml" />
+    <Content Include="Views\HelpMeFront\R2.cshtml" />
+    <Content Include="Views\HelpMeFront\R3.cshtml" />
+    <Content Include="Views\HelpMeFront\R4.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

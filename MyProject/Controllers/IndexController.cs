@@ -43,18 +43,33 @@ namespace MyProject.Controllers
 
         public ActionResult Anatomy()
         {
+
+            string test = Request.Form["muscle"];
+           
             int i = 1;
+
+            if (test != null )
+            {
+                return RedirectToAction("Suggest", "Index", new { test });
+            }
+
             var check_Muscle = db.MuscleTables.Where(a => a.ID_Muscle == i).FirstOrDefault<MuscleTable>();
 
             var _cause = check_Muscle.CauseTables.ToList();
+
+
+            
+
+            
             
             return View(_cause.ToList());
 
 
         }
 
-        public ActionResult Suggest()
+        public ActionResult Suggest(int test)
         {
+            int t = test;
             return View();
         }
 

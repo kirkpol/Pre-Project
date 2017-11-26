@@ -8,6 +8,7 @@
 
 </head>
 <html>
+@using (Html.BeginForm()) { 
 <body style="background-color:pink">
 
 
@@ -21,7 +22,7 @@
         <div class="row">
             <div class="group">
                 <label class="col-md-4" style="text-align:left">กล้ามเนื้อ</label>
-                <select name="muscle" class="col-sm-9" required>
+                <select name="muscles" class="col-sm-9" required>
 
                     <option value="0">---NONE---</option>
                     <option value="1">ข้อเท้าด้านหน้า</option>
@@ -38,7 +39,7 @@
                     <option value="0">---NONE---</option>
                     @foreach (var item in Model)
                     {
-                        <option value="1">@item.Cause</option>
+                        <option value="@item.ID_Cause">@item.Cause</option>
 
                     }
                 </select>
@@ -47,10 +48,12 @@
 
         <div class="row" style="text-align:right;padding-top:10px">
             <div class="col-md-6">
-                <button type="submit" onclick="location.href='@Url.Action("Suggest", "Index")';" style="background-color:black;color:white ; border-radius:30px ; border:solid #FFffff;font-weight:bolder;width:100px;height:25px;">ตรวจสอบ</button>
+                <button type="submit" style="background-color:black;color:white ; border-radius:30px ; border:solid #FFffff;font-weight:bolder;width:100px;height:25px;">ตรวจสอบ</button>
+     
             </div>
         </div>
 
     </div>
 </body>
+}
 </html>
