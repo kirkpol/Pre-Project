@@ -147,6 +147,34 @@
     <Content Include="picture\map.png" />
     <Content Include="picture\Picture1.png" />
     <Content Include="picture\createPMH.png" />
+    <Content Include="picture\หน้า\1-1.png" />
+    <Content Include="picture\หน้า\1-2.png" />
+    <Content Include="picture\หน้า\1-3.png" />
+    <Content Include="picture\หน้า\1-4.png" />
+    <Content Include="picture\หน้า\2-1.png" />
+    <Content Include="picture\หน้า\2-2.png" />
+    <Content Include="picture\หน้า\2-3.png" />
+    <Content Include="picture\หน้า\2-4.png" />
+    <Content Include="picture\หน้า\3-1.png" />
+    <Content Include="picture\หน้า\3-2.png" />
+    <Content Include="picture\หน้า\3-3.png" />
+    <Content Include="picture\หน้า\3-4.png" />
+    <Content Include="picture\หน้า\4-1.png" />
+    <Content Include="picture\หน้า\4-2.png" />
+    <Content Include="picture\หน้า\4-3.png" />
+    <Content Include="picture\หน้า\4-4.png" />
+    <Content Include="picture\หน้า\5-1.png" />
+    <Content Include="picture\หน้า\5-2.png" />
+    <Content Include="picture\หน้า\5-3.png" />
+    <Content Include="picture\หน้า\5-4.png" />
+    <Content Include="picture\หน้า\6-1.png" />
+    <Content Include="picture\หน้า\6-2.png" />
+    <Content Include="picture\หน้า\6-3.png" />
+    <Content Include="picture\หน้า\6-4.png" />
+    <Content Include="picture\หน้า\7-1.png" />
+    <Content Include="picture\หน้า\7-2.png" />
+    <Content Include="picture\หน้า\7-3.png" />
+    <Content Include="picture\หน้า\7-4.png" />
     <Content Include="picture\หลัง\1-1.png" />
     <Content Include="picture\หลัง\1-2.png" />
     <Content Include="picture\หลัง\1-3.png" />
@@ -311,6 +339,7 @@
     <Content Include="Views\HelpMeFront\R2.cshtml" />
     <Content Include="Views\HelpMeFront\R3.cshtml" />
     <Content Include="Views\HelpMeFront\R4.cshtml" />
+    <Content Include="Views\HelpMeFront\FrontV2.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

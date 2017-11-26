@@ -14,6 +14,11 @@ namespace MyProject.Controllers
             return View();
         }
 
+        public ActionResult FrontV2()
+        {
+            return View();
+        }
+
         public ActionResult L1()
         {
             return View();
