@@ -146,6 +146,7 @@
     <Content Include="picture\Background\BackGround.jpg" />
     <Content Include="picture\Background\bg.jpg" />
     <Content Include="picture\Background\heartbeat.jpg" />
+    <Content Include="picture\favicon.ico" />
     <Content Include="picture\Foot.png" />
     <Content Include="picture\map.png" />
     <Content Include="picture\Picture1.png" />
@@ -238,7 +239,6 @@
     <Content Include="Models\DBJ.edmx.diagram">
       <DependentUpon>DBJ.edmx</DependentUpon>
     </Content>
-    <None Include="Properties\PublishProfiles\HelpMepicec - Web Deploy.pubxml" />
     <None Include="Properties\PublishProfiles\HelpMePiece - Web Deploy.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
