@@ -1,0 +1,42 @@
+﻿@model IEnumerable<MyProject.Models.CauseTable>
+
+
+
+<head>
+
+
+</head>
+<html>
+@using (Html.BeginForm())
+{
+    <body style="background-color:pink">
+
+
+
+        <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+
+        <div class="col-md-12">
+            <center>
+                <div class="row">
+                    <div class="group">
+                        <center><p style="font-size: 60px ;color:darkturquoise">ข้อเท้าด้านหน้าข้างขวา</p> </center>
+
+                        <label class="col-md-5" style="text-align:right;font-size:18px;color:darkturquoise">สาเหตุเกิดจาก</label>
+                        <select name="muscle" class="col-md-7" required>
+                            <option value="0">---NONE---</option>
+                            @foreach (var item in Model)
+                            {
+                                <option value="@item.ID_Cause">@item.Cause</option>
+
+                            }
+                        </select>
+                    </div>
+                </div>
+                <br />
+                <button type="submit" class="btn btn-default">ตรวจสอบอาการ</button>
+            </center>
+        </div>
+
+    </body>
+}
+</html>

@@ -1,0 +1,46 @@
+﻿@model MyProject.Models.SuggestTable
+
+<head>
+    @if (ViewBag.Error != null)
+    {
+
+        <script>
+                                alert("บันทึกเรียบร้อย");
+
+                                    location.href = '@Url.Action("Index", "Index")';
+
+
+        </script>
+
+    }
+</head>
+<html>
+<body style="background-color:pink">
+    <br /><br /><br /><br />
+    <div class="col-md-12">
+        <center>
+            <label style="font-size:40px ;color:white">อาการที่คาดว่าจะเป็น</label><br /><br />
+            <label style="font-size:25px ;color:darkturquoise">@Model.Inflamed</label>
+        </center>
+    </div>
+
+    <br /><br /><br /><br />
+
+    <div class="col-md-12">
+        <center>
+            <label style="font-size:40px ;color:white">ปฐมพยาบาลเบื้องต้น</label><br /><br />
+            <label style="font-size:25px ;color:darkturquoise">@Model.Suggest</label>
+        </center>
+    </div>
+
+    <div class="row" style="text-align:center;padding-top:50px">
+
+        <input class="btn btn-default" type="submit" value="หน้าหลัก" onclick="location.href='@Url.Action("Index", "Index")';" />
+    </div>
+
+
+
+</body>
+</html>
+
+

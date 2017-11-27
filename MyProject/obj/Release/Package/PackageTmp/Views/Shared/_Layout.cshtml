@@ -4,12 +4,12 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewBag.Title - My ASP.NET Application</title>
+    <title>@ViewBag.Title Help Me Piece</title>
     <link href="~/Content/Site.css" rel="stylesheet" type="text/css" />
     <link href="~/Content/bootstrap.min.css" rel="stylesheet" type="text/css" />
     <script src="~/Scripts/modernizr-2.6.2.js"></script>
 </head>
-<body>
+<body background="/picture/Background/bg.jpg">
 
 
 
@@ -21,9 +21,9 @@
                     <span class="icon-bar" style="background-color:lightseagreen"></span>
                     <span class="icon-bar" style="background-color:lightseagreen"></span>
                 </button>
-                <a class="navbar-brand" onclick="location.href='@Url.Action("Index", "Index")';">
+                <a class="navbar-brand" style="font-family:'Brush Script MT';font-size:25px" onclick="location.href='@Url.Action("Index", "Index")';">
 
-                    Help Me Plece
+                    Help Me Piece
                 </a>
             </div>
 
@@ -33,8 +33,9 @@
 
                 <ul class="nav navbar-nav navbar-left" style="color:#ffffff">
 
-                    <li>@Html.ActionLink("ตรวจสอบอาการ", "Index", "Index")</li>
-                    <li>@Html.ActionLink("ค้นหาโรงพยาบาล", "Hospital", "Index")</li>
+                    <li>@Html.ActionLink("ด้านหน้า", "Front", "HelpMeFront")</li>
+                    <li>@Html.ActionLink("ด้านหลัง", "Back", "HelpMeBack")</li>
+                    <li>@Html.ActionLink("ค้นหาโรงพยาบาล", "Hospital", "Hospital")</li>
                 </ul>
 
 
@@ -43,7 +44,7 @@
                     <ul class="nav navbar-nav navbar-right" style="color:#ffffff">
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                                <b>
+                                <b >
                                     <span class="glyphicon glyphicon-user"></span>
                                     คุณ. @HttpContext.Current.Session["Firstname"]<br />
 
@@ -51,12 +52,12 @@
                             </a>
 
                             <ul class="dropdown-menu" role="menu" style="min-width:130px">
-                                
+
                                 <li style="text-align:right;font-size:14px"> @Html.ActionLink("โปรไฟล์", "Show", "Profile") </li>
                                 <li style="text-align:right;font-size:14px"> @Html.ActionLink("เปลี่ยนรหัสผ่าน", "changpassword", "Profile")</li>
                                 <li style="text-align:right;font-size:14px"> @Html.ActionLink("ประวัติการรักษา", "PMH_Show", "PMH")</li>
                                 <li style="text-align:right;font-size:14px">@Html.ActionLink("ออกจากระบบ", "Logout", "Index")</li>
-                                  
+
 
 
 
@@ -64,7 +65,7 @@
                         </li>
                     </ul>
                 }
-                else 
+                else
                 {
                     <ul class="nav navbar-nav navbar-right" style="color:#ffffff">
                         <li>@Html.ActionLink("เข้าสู่ระบบ", "Login", "Login")</li>
@@ -87,4 +88,5 @@
     <script src="~/Scripts/jquery-1.10.2.min.js"></script>
     <script src="~/Scripts/bootstrap.min.js"></script>
 </body>
+
 </html>

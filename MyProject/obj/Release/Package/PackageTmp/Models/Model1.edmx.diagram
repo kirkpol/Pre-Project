@@ -5,9 +5,14 @@
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
       <Diagram DiagramId="3bda9333730642969559d4cb47725338" Name="Diagram1">
-        <EntityTypeShape EntityType="PredatabaseModel.Medical_history" Width="1.5" PointX="3" PointY="1.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="PredatabaseModel.Medical_history" Width="1.5" PointX="2.625" PointY="1.375" IsExpanded="true" />
         <EntityTypeShape EntityType="PredatabaseModel.Profile" Width="1.5" PointX="0.75" PointY="1" IsExpanded="true" />
         <AssociationConnector Association="PredatabaseModel.FK_Medical_history_Profile" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="PredatabaseModel.CauseTable" Width="1.5" PointX="4.875" PointY="1.875" />
+        <EntityTypeShape EntityType="PredatabaseModel.MuscleTable" Width="1.5" PointX="7.25" PointY="3.125" />
+        <EntityTypeShape EntityType="PredatabaseModel.SuggestTable" Width="1.5" PointX="7.25" PointY="0.5" />
+        <AssociationConnector Association="PredatabaseModel.Cause_Suggest" />
+        <AssociationConnector Association="PredatabaseModel.Muscle_Cause" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
